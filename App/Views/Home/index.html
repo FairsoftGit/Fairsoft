@@ -6,4 +6,10 @@
 
     <h1>Welcome</h1>
 
+{% set name = Kaaas|capitalize %}
+
+{% trans %}
+Hello {{ name }}!
+{% endtrans %}
+
 {% endblock %}
