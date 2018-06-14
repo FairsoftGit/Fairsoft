@@ -1,6 +1,6 @@
 <?php
 $language = "en_US.UTF-8";
-putenv("LANGUAGE=" . $language);
+putenv("LANGUAGE=$language");
 setlocale(LC_ALL, $language);
 
 $domain = "messages"; // which language file to use
