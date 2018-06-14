@@ -13,8 +13,8 @@ class View
     /**
      * Render a view file
      *
-     * @param string $view  The view file
-     * @param array $args  Associative array of data to display in the view (optional)
+     * @param string $view The view file
+     * @param array $args Associative array of data to display in the view (optional)
      *
      * @return void
      */
@@ -34,8 +34,8 @@ class View
     /**
      * Render a view template using Twig
      *
-     * @param string $template  The template file
-     * @param array $args  Associative array of data to display in the view (optional)
+     * @param string $template The template file
+     * @param array $args Associative array of data to display in the view (optional)
      *
      * @return void
      */
@@ -48,15 +48,30 @@ class View
             $twig = new \Twig_Environment($loader);
             $twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-            putenv('LC_ALL=fr_FR');
-            setlocale(LC_ALL, 'fr_FR');
+            if (isset($_GET["locale"])) {
+                if ($_GET["locale"] == "nl") {
+                    $locale = "nl_NL";
+                } else {
+                    $locale = "en_US";
+                }
+            } else if (isset($_SESSION["locale"])) {
+                if ($_SESSION["locale"] == "nl") {
+                    $locale = "nl_NL";
+                } else {
+                    $locale = "en_US";
+                }
+            } else {
+                $lang = "nl_NL";
+                $locale = sprintf("%s.utf-8", $lang);
+            }
 
-            // Specify the location of the translation tables
-            bindtextdomain('myAppPhp', 'includes/locale');
-            bind_textdomain_codeset('myAppPhp', 'UTF-8');
+            $domain = "messages";
+            $lpath = realpath((dirname(__DIR__)) . DIRECTORY_SEPARATOR . "locale");
 
-            // Choose domain
-            textdomain('myAppPhp');
+            putenv("LANGUAGE=" . $locale);
+            setlocale(LC_ALL, $locale);
+            bindtextdomain($domain, $lpath);
+            textdomain($domain);
         }
 
         echo $twig->render($template, $args);
