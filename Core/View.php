@@ -46,6 +46,16 @@ class View
         if ($twig === null) {
             $loader = new \Twig_Loader_Filesystem(dirname(__DIR__) . '/App/Views');
             $twig = new \Twig_Environment($loader);
+            $twig->addExtension(new \Twig_Extensions_Extension_I18n());
+            putenv('LC_ALL=fr_FR');
+            setlocale(LC_ALL, 'fr_FR');
+
+            // Specify the location of the translation tables
+            bindtextdomain('myAppPhp', 'includes/locale');
+            bind_textdomain_codeset('myAppPhp', 'UTF-8');
+
+            // Choose domain
+            textdomain('myAppPhp');
         }
 
         echo $twig->render($template, $args);
