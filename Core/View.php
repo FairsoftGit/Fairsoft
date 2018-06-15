@@ -48,22 +48,22 @@ class View
             $twig = new \Twig_Environment($loader);
             $twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-            if (isset($_GET["locale"])) {
-                if ($_GET["locale"] == "nl") {
-                    $locale = "nl_NL";
-                } else {
-                    $locale = "en_US";
-                }
-            } else if (isset($_SESSION["locale"])) {
-                if ($_SESSION["locale"] == "nl") {
-                    $locale = "nl_NL";
-                } else {
-                    $locale = "en_US";
-                }
-            } else {
-                $lang = "nl_NL";
-                $locale = sprintf("%s.utf-8", $lang);
-            }
+//            if (isset($_GET["locale"])) {
+//				if ($_GET["locale"] == "nl") {
+//					$locale = "nl_NL";
+//				} else {
+//					$locale = "en_US";
+//				}
+//			} else if (isset($_SESSION["locale"])) {
+//				if ($_SESSION["locale"] == "nl") {
+//					$locale = "nl_NL";
+//				} else {
+//					$locale = "en_US";
+//				}
+//			} else {
+//				$lang = "nl_NL";
+//				$locale = sprintf("%s.utf-8", $lang);
+//			}
 
             $domain = "messages";
             $lpath = realpath((dirname(__DIR__)) . DIRECTORY_SEPARATOR . "locale");
