@@ -13,7 +13,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 session_start();
 
-$_SESSION["locale"] = "en";
+//$_SESSION["locale"] = "en";
 /**
  * Error and Exception handling
  */
