@@ -11,7 +11,9 @@
  */
 require dirname(__DIR__) . '/vendor/autoload.php';
 
+session_start();
 
+//$_SESSION["locale"] = "en";
 /**
  * Error and Exception handling
  */
@@ -28,5 +30,5 @@ $router = new Core\Router();
 // Add the routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
-    
+
 $router->dispatch($_SERVER['QUERY_STRING']);
