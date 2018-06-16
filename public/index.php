@@ -26,11 +26,17 @@ set_exception_handler('Core\Error::exceptionHandler');
  */
 $router = new Core\Router();
 
-// Add the routes
-$router->add('', ['controller' => 'Page', 'action' => 'aboutUs']);
-$router->add('how-it-works', ['controller' => 'Page', 'action' => 'howItWorks']);
-$router->add('tech-support', ['controller' => 'Page', 'action' => 'techSupport']);
-$router->add('contact', ['controller' => 'Page', 'action' => 'contact']);
+// Routes to static pages
+$router->add('', ['controller' => 'page', 'action' => 'aboutUs']);
+$router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks']);
+$router->add('tech-support', ['controller' => 'page', 'action' => 'techSupport']);
+$router->add('contact', ['controller' => 'page', 'action' => 'contact']);
+
+// Routes to productpages
+$router->add('fairVest/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
+$router->add('fairBox/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
+$router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
+$router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
 
 if(!session_id())
 {

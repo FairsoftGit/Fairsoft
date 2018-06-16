@@ -5,6 +5,18 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+	<p>
+    <nav>
+		<a href="/">Home</a>
+		<a href="/how-it-works">{% trans "Hoe het werkt" %} </a>
+		<a href="/tech-support">{% trans "Technische ondersteuning" %} </a>
+		<a href="/contact">Contact</a>
+	</nav>
+	<hr>
+	<nav>
+		<a href="">{% trans "NL" %}</a>
+		<a href="">{% trans "EN" %}</a>
+	</nav>
     {% block body %}
     {% endblock %}
 </body>

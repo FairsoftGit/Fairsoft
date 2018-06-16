@@ -3,9 +3,14 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<a href="/">Home</a>
-<a href="/how-it-works">{% trans "Hoe het werkt" %} </a>
-<a href="/tech-support">{% trans "Technische ondersteuning" %} </a>
-<a href="/contact">Contact</a>
-<h1>{% trans "Over ons" %} </h1>
+<h1>Productnaam : {{ product.getProductName() }}</h1>
+<h2>Prijs : &euro; {{ product.getSalesPrice() }}</h2>
+<p>{{ product.getProductId() }}</p>
+<hr>
+<p>{{ product.getProductDesc() }}</p>
+<hr>
+<p>{{ product.getProductDesc_en() }}</p>
+
+
+
 {% endblock %}
