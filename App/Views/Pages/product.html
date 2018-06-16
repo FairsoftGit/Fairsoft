@@ -3,14 +3,15 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<h1>Productnaam : {{ product.getProductName() }}</h1>
+<h1>Productnaam : {{product.getProductName()}} <img src="{{product.getImgurl()}}" alt="thumb" width="{{product.getThumbSize()}}" /></h1>
 <h2>Prijs : &euro; {{ product.getSalesPrice() }}</h2>
-<p>{{ product.getProductId() }}</p>
+<p>Product-id : {{ product.getProductId() }}</p>
 <hr>
 <p>{{ product.getProductDesc() }}</p>
 <hr>
 <p>{{ product.getProductDesc_en() }}</p>
-
+<hr>
+<p><img src="{{product.getImgurl()}}" alt="plaatje" width="{{product.getImgSize()}}" /></p>
 
 
 {% endblock %}
