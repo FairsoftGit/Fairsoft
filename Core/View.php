@@ -48,30 +48,24 @@ class View
             $twig = new \Twig_Environment($loader);
             $twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-//            if (isset($_GET["locale"])) {
-//				if ($_GET["locale"] == "nl") {
-//					$locale = "nl_NL";
-//				} else {
-//					$locale = "en_US";
-//				}
-//			} else if (isset($_SESSION["locale"])) {
-//				if ($_SESSION["locale"] == "nl") {
-//					$locale = "nl_NL";
-//				} else {
-//					$locale = "en_US";
-//				}
-//			} else {
-//				$lang = "nl_NL";
-//				$locale = sprintf("%s.utf-8", $lang);
-//			}
+            if (isset($_GET["locale"])) {
+				if ($_GET["locale"] == "nl") {
+					$locale = "nl_NL";
+				} else {
+					$locale = "en_US";
+				}
+			} else if (isset($_SESSION["locale"])) {
+				if ($_SESSION["locale"] == "nl") {
+					$locale = "nl_NL";
+				} else {
+					$locale = "en_US";
+				}
+			} else {
+				$lang = "nl_NL";
+				$locale = sprintf("%s.utf-8", $lang);
+			}
 
-			// Even een test door de taal automatisch te selecteren
-			//Eerste locale op engels zetten omdat je anders niet weet of het werkt
-			$locale = "en_US";
-			//Nu de locale vinden op basis van http accept=language header
-			$locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-
-            $domain = "messages";
+			$domain = "messages";
             $lpath = realpath((dirname(__DIR__)) . DIRECTORY_SEPARATOR . "locale");
 
             putenv("LANGUAGE=" . $locale);

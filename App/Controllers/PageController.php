@@ -12,23 +12,21 @@ class PageController extends \Core\Controller
 	// Put Methods here
 	public function aboutUsAction()
 	{
-		View::renderTemplate('Pages/fs/home.html');
+		View::renderTemplate('Pages/home.html');
 	}
 
 	public function howItWorksAction()
 	{
-		View::renderTemplate('Pages/fs/howItWorks.html');
+		View::renderTemplate('Pages/howItWorks.html');
 	}
-
-	// producten en diensten
 
 	public function techSupportAction()
 	{
-		View::renderTemplate('Pages/fs/techSupport.html');
+		View::renderTemplate('Pages/techSupport.html');
 	}
 
 	public function contactAction()
 	{
-		View::renderTemplate('Pages/fs/contact.html');
+		View::renderTemplate('Pages/contact.html');
 	}
 }
