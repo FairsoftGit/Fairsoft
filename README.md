@@ -20,7 +20,7 @@ Configuration settings are stored in the [App/Config.php](App/Config.php) class.
 
 ## Routing
 
-The [Router](Core/Router.php) translates URLs into controllers and actions. Routes are added in the [front controller](public/index.php). A sample home route is included that routes to the `index` action in the [Home controller](App/Controllers/Home.php).
+The [Router](Core/Router.php) translates URLs into controllers and actions. Routes are added in the [front controller](public/index.php). A sample home route is included that routes to the `index` action in the [Home controller](App/Controllers/HomeController.php).
 
 Routes are added with the `add` method. You can add fixed URL routes, and specify the controller and action, like this:
 
@@ -51,9 +51,9 @@ $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 
 Controllers respond to user actions (clicking on a link, submitting a form etc.). Controllers are classes that extend the [Core\Controller](Core/Controller.php) class.
 
-Controllers are stored in the `App/Controllers` folder. A sample [Home controller](App/Controllers/Home.php) included. Controller classes need to be in the `App/Controllers` namespace. You can add subdirectories to organise your controllers, so when adding a route for these controllers you need to specify the namespace (see the routing section above).
+Controllers are stored in the `App/Controllers` folder. A sample [Home controller](App/Controllers/HomeController.php) included. Controller classes need to be in the `App/Controllers` namespace. You can add subdirectories to organise your controllers, so when adding a route for these controllers you need to specify the namespace (see the routing section above).
 
-Controller classes contain methods that are the actions. To create an action, add the **`Action`** suffix to the method name. The sample controller in [App/Controllers/Home.php](App/Controllers/Home.php) has a sample `index` action.
+Controller classes contain methods that are the actions. To create an action, add the **`Action`** suffix to the method name. The sample controller in [App/Controllers/Home.php](App/Controllers/HomeController.php) has a sample `index` action.
 
 You can access route parameters (for example the **id** parameter shown in the route examples above) in actions via the `$this->route_params` property.
 

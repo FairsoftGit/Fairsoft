@@ -9,7 +9,6 @@ namespace Core;
  */
 class Router
 {
-
     /**
      * Associative array of routes (the routing table)
      * @var array
@@ -108,6 +107,7 @@ class Router
 
         if ($this->match($url)) {
             $controller = $this->params['controller'];
+			$controller = $this->addControllerSuffix($controller);
             $controller = $this->convertToStudlyCaps($controller);
             $controller = $this->getNamespace() . $controller;
 
@@ -211,4 +211,10 @@ class Router
 
         return $namespace;
     }
+
+	protected function addControllerSuffix($controller)
+	{
+		$controller = $controller . 'Controller';
+		return $controller;
+	}
 }
