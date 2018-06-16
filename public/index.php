@@ -11,7 +11,9 @@
  */
 require dirname(__DIR__) . '/vendor/autoload.php';
 
+session_start();
 
+//$_SESSION["locale"] = "en";
 /**
  * Error and Exception handling
  */
@@ -35,5 +37,6 @@ if(!session_id())
 {
 	session_start();
 }
+
 
 $router->dispatch($_SERVER['QUERY_STRING']);
