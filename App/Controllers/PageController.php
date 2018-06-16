@@ -15,6 +15,16 @@ class PageController extends \Core\Controller
 		View::renderTemplate('Pages/home.html');
 	}
 
+	public function howItWorksAction()
+	{
+		View::renderTemplate('Pages/howItWorks.html');
+	}
+
+	public function techSupportAction()
+	{
+		View::renderTemplate('Pages/techSupport.html');
+	}
+
 	public function contactAction()
 	{
 		View::renderTemplate('Pages/contact.html');
