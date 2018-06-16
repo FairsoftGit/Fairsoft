@@ -7,9 +7,9 @@
 <h2>Prijs : &euro; {{ product.getSalesPrice() }}</h2>
 <p>Product-id : {{ product.getProductId() }}</p>
 <hr>
-<p>{{ product.getProductDesc() }}</p>
+{% autoescape false %} {{ product.getProductDesc() }} {% endautoescape %}
 <hr>
-<p>{{ product.getProductDesc_en() }}</p>
+{% autoescape false %} <p>{{ product.getProductDesc_en() }} {% endautoescape %}
 <hr>
 <p><img src="{{product.getImgurl()}}" alt="plaatje" width="{{product.getImgSize()}}" /></p>
 

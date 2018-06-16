@@ -43,5 +43,4 @@ if(!session_id())
 	session_start();
 }
 
-
 $router->dispatch($_SERVER['QUERY_STRING']);
