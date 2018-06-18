@@ -2,9 +2,10 @@
 
 namespace App\Controllers\General;
 
-use Core\Session;
+use \Core\Session;
 use \Core\View;
-use App\Models\Account;
+use \App\Models\Account;
+use \App\Config;
 
 class AccountController extends \Core\Controller
 {
@@ -37,5 +38,17 @@ class AccountController extends \Core\Controller
     {
         Session::clear();
         header('location: /');
+    }
+
+    public function setLanguageAction()
+    {
+        $referer = $_SERVER['HTTP_REFERER'];
+        $lan = $this->route_params["language"];
+        if (!is_null($lan)) {
+            if (array_key_exists($lan, Config::AVAILABLE_LANGUAGES)) {
+                Session::set('lan', $lan);
+            }
+        }
+        header("location: " . $referer);
     }
 }

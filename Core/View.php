@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+use App\Config;
 
 /**
  * View
@@ -48,23 +49,17 @@ class View
             $twig = new \Twig_Environment($loader);
             $twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-            if (isset($_GET["locale"])) {
-				if ($_GET["locale"] == "nl") {
-					$locale = "nl_NL";
-				} else {
-					$locale = "en_US";
-				}
-			} else if (isset($_SESSION["locale"])) {
-				if ($_SESSION["locale"] == "nl") {
-					$locale = "nl_NL";
-				} else {
-					$locale = "en_US";
-				}
-			} else {
-				$lang = "nl_NL";
-				$locale = sprintf("%s.utf-8", $lang);
+           if (!is_null(Session::get('lan'))) {
+               $lan = Session::get('lan');
+                if(array_key_exists($lan, Config::AVAILABLE_LANGUAGES))
+                {
+                    $locale = Config::AVAILABLE_LANGUAGES[$lan];
+                }
+
 			}
 
+//            $lang = "nl_NL";
+//            $locale = sprintf("%s.utf-8", $lang);
 			$domain = "messages";
             $lpath = realpath((dirname(__DIR__)) . DIRECTORY_SEPARATOR . "locale");
 

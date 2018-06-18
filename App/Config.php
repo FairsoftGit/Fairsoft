@@ -43,4 +43,6 @@ class Config
      * @var boolean
      */
     const SHOW_ERRORS = false;
+
+    const AVAILABLE_LANGUAGES =['nl' => 'nl_NL', 'en' => 'en_US'];
 }
