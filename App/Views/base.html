@@ -41,8 +41,10 @@
 	</nav>
 	<hr>
 	<nav>
-		<a href="/nl">{% trans "NL" %}</a>
-		<a href="/en">{% trans "EN" %}</a>
+		{% for language in available_languages %}
+			<a href="/nl">{% trans "NL" %}</a>
+			<a href="/en">{% trans "EN" %}</a>
+		{% endfor %}
 	</nav>
     {% block body %}
     {% endblock %}

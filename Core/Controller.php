@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use \App\Models\Language;
+
 /**
  * Base controller
  *
@@ -15,23 +17,35 @@ abstract class Controller
      * @var array
      */
     protected $route_params = [];
+    protected $available_languages = [];
 
     /**
      * Class constructor
      *
-     * @param array $route_params  Parameters from the route
+     * @param array $route_params Parameters from the route
      *
      * @return void
      */
     public function __construct($route_params)
     {
         $this->route_params = $route_params;
+        $this->available_languages = Language::getAvailable();
     }
 
-    public function isAuthenticated(){
+    protected function getLanguageByCode($code)
+    {
+        foreach ($this->available_languages as $language) {
+            if ($language->code === $code) {
+                return $language;
+            }
+        }
+        return null;
+    }
 
-        if(is_null(Session::get('account')))
-        {
+    protected function isAuthenticated()
+    {
+
+        if (is_null(Session::get('account'))) {
             return false;
         }
         return true;
@@ -43,7 +57,7 @@ abstract class Controller
      * filter methods on action methods. Action methods need to be named
      * with an "Action" suffix, e.g. indexAction, showAction etc.
      *
-     * @param string $name  Method name
+     * @param string $name Method name
      * @param array $args Arguments passed to the method
      *
      * @return void

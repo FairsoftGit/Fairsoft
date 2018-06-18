@@ -30,7 +30,8 @@ class AccountController extends \Core\Controller
             header('Content-Type: application/json');
             echo $encoded;
         } else {
-            view::renderTemplate('General/Account/login.html');
+            view::renderTemplate('General/Account/login.html', ['available_languages' => $this->available_languages]);
+
         }
     }
 
@@ -42,13 +43,12 @@ class AccountController extends \Core\Controller
 
     public function setLanguageAction()
     {
-        $referer = $_SERVER['HTTP_REFERER'];
-        $lan = $this->route_params["language"];
-        if (!is_null($lan)) {
-            if (array_key_exists($lan, Config::AVAILABLE_LANGUAGES)) {
-                Session::set('lan', $lan);
-            }
+        $code = $this->route_params["language"];
+        $language = $this->getLanguageByCode($code);
+        if(!is_null($language))
+        {
+            Session::set('locale', $language->locale);
         }
-        header("location: " . $referer);
+        header("location: " . $_SERVER['HTTP_REFERER']);
     }
 }
