@@ -22,5 +22,25 @@ msgstr "How it works"
 msgid "Technische ondersteuning"
 msgstr "Tech Support"
 
+<<<<<<< HEAD
 msgid "Beschrijving FairVest"
 msgstr "<p>This is the description of our newest product: FairVest!</p>"
+=======
+msgid "Fairboard login"
+msgstr "Fairboard login"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Gebruikersnaam"
+msgstr "Username"
+
+msgid "Wachtwoord"
+msgstr "Password"
+
+msgid "Registreren"
+msgstr "Registreren"
+
+msgid "Wachtwoord vergeten"
+msgstr "Forgot password?"
+>>>>>>> login

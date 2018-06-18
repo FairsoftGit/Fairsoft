@@ -28,6 +28,15 @@ abstract class Controller
         $this->route_params = $route_params;
     }
 
+    public function isAuthenticated(){
+
+        if(is_null(Session::get('account')))
+        {
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Magic method called when a non-existent or inaccessible method is
      * called on an object of this class. Used to execute before and after

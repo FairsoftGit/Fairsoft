@@ -22,5 +22,25 @@ msgstr "Hoe het werkt"
 msgid "Technische ondersteuning"
 msgstr "Technische ondersteuning"
 
+<<<<<<< HEAD
 msgid "Beschrijving FairVest"
 msgstr "<p>Het FairVest bestaat uit een aantal onderdelen: een hoes van hoogwaardig textiel en de detectie platen.</p><p>De binnenzijde van de hoes is voorzien van een dubbele voering, waarin de flexibele detectieplaten in worden gestoken. De platen (rug- en borstplaat) worden met elkaar verbonden door een kabelverbinding.<br>Hiervoor wordt gebruik gemaakt van platte verbindingskabels die zijn verwerkt in de voering, zodat deze niet gaan irriteren.</p> <p>In het vest is ook een GPS antenne aangebracht, waardoor je GPS positie bekend is.</p> <p>Vanaf de borstplaat wordt een verbinding gemaakt met de Fair Box. Deze verzorgd de verzending van je GPS positie en eventuele hits naar de Fair Cloud.</p> <p>De hoezen zijn in verschillende maten en vormgevingen leverbaar.</p>"
+=======
+msgid "Fairboard login"
+msgstr "Fairboard login"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Gebruikersnaam"
+msgstr "Gebruikersnaam"
+
+msgid "Wachtwoord"
+msgstr "Wachtwoord"
+
+msgid "Registreren"
+msgstr "Registreren"
+
+msgid "Wachtwoord vergeten"
+msgstr "Wachtwoord vergeten?"
+>>>>>>> login

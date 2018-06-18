@@ -1,10 +1,22 @@
-.idea/
-.idea/workspace.xml
-.idea/deployment.xml
-.idea/deployment.xml
-.idea/Fairsoft.iml
-.idea/modules.xml
-.idea/php.xml
+
 .idea/vcs.xml
+.idea/dataSources.local.xml
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d.xml
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata.keystream
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata.len
 .idea/workspace.xml
+<<<<<<< HEAD
+=======
+.idea/modules.xml
+.idea/Fairsoft.iml
+.idea/deployment.xml
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/storage.xml
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_src_/schema/liannela_fsdb2.zip
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata_i.len
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata_i
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata.values.at
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata.keystream.len
+.idea/dataSources/bcbba37f-8c6e-42d7-8ac0-7e89e72af47d/_metadata_/metadata
+.idea/dataSources.xml
+>>>>>>> login
 logs/2018-06-16.txt
