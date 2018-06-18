@@ -12,3 +12,7 @@ Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'PDOStatement::
 #6 C:\xampp\htdocs\Fairsoft\public\index.php(40): Core\Router->dispatch('login')
 #7 {main}
 Thrown in 'C:\xampp\htdocs\Fairsoft\App\models\Account.php' on line 49
+[18-Jun-2018 22:24:36 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 D:\xampp\htdocs\Fairsoft\public\index.php(57): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'D:\xampp\htdocs\Fairsoft\Core\Router.php' on line 130

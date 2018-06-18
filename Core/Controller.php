@@ -30,6 +30,12 @@ abstract class Controller
     {
         $this->route_params = $route_params;
         $this->available_languages = Language::getAvailable();
+		$code = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+		$languageObject = $this->getLanguageByCode($code);
+		if(!is_null($languageObject) && is_null(Session::get('locale')))
+		{
+			Session::set('locale', $languageObject->getLocale());
+		}
     }
 
     protected function getLanguageByCode($code)
