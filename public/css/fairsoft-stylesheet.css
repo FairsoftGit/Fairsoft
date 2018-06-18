@@ -1,0 +1,292 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Circular gradient effect in dark background */
+    background: -webkit-radial-gradient(circle, #515151, #000);
+    background: -o-radial-gradient(circle, #515151, #000);
+    background: -moz-radial-gradient(circle, #515151, #000);
+    background: radial-gradient(circle, #515151, #000);
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+    margin-bottom: 190px; /*Set margin bottom for sticky footer*/
+}
+
+a{
+    color: #F6A017;
+}
+
+a:hover{
+    color: #c48012;
+}
+
+.btn-fairsoft {
+    color: #fff;
+    background-color: #F6A017;
+    border-color: #F6A017;
+}
+
+.btn-fairsoft:hover{
+    color: #fff;
+    background-color: #c48012;
+    border-color: #b07310;
+}
+
+.btn-fairsoft:not(:disabled):not(.disabled).active, .btn-fairsoft:not(:disabled):not(.disabled):active,  .show>.btn-fairsoft.dropdown-toggle {
+    color: #fff;
+    background-color: #c48012;
+    border-color: #b07310;
+}
+
+#shopping-cart{
+    font-size:2em;
+    color: white;
+}
+
+#shopping-cart:hover{
+    color: #F6A017;
+}
+
+.addProductButton{
+    color: white;
+}
+
+/** OPMAAK HEADER **/
+
+#headerLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.content-card{
+    border: 1px solid #F6A017;
+}
+
+.content-card .card-header{
+    background-color: #ccc6bd;
+    font-weight: bold;
+}
+
+.content-card > .card-body{
+    background-color: #E3DCD2;
+}
+
+.product-card{
+    background-color: white;
+    border: 1px solid #343a40;
+    box-shadow: 0px 2px 20px 6px rgba(0, 0, 0, 0.6), 4px 4px 20px 10px rgba(0, 0, 0, 0.19);
+}
+
+.product-card > .card-footer{
+    background-color: white;
+}
+
+/** OPMAAK MENU **/
+
+.navbar {
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    border-style: solid;
+    border-color: #F6a017;
+    border-width: 1px 1px 1px 1px;
+}
+
+.nav-link{
+    padding: 0 1rem;
+}
+
+.dropdown-item a:focus, .dropdown-menu > a:hover {
+    background-color: #343a40;
+    color: #F6A017;
+}
+
+.navbar-nav .nav-item .nav-link{
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+    color: #F6A017;
+}
+
+.navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover{
+    color: #F6A017;
+}
+
+.dropdown-item {
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-nav > li.dropdown.show .dropdown-menu {
+    background-color: #343a40;
+    border-color: #F6A017;
+    border-width: 0 0 0 0;
+}
+
+@media (min-width: 576px) {  }
+
+@media (min-width: 768px) {
+    /*Hide Logo in navbar*/
+    .navbar-brand{
+        padding: 7px 15px;
+        max-width: 70%;
+        display: none;
+    }
+}
+
+@media (min-width: 992px)
+{
+    .navbar-brand{
+        display:none !important;
+    }
+
+    .navbar-nav {
+        display: table;
+        table-layout: auto;
+        float: none;
+        width: 100%;
+    }
+
+    .navbar-nav > li {
+        display: table-cell;
+        float: none;
+        text-align: center;
+    }
+
+    .navbar-nav > li.dropdown.show {
+        position: static;
+    }
+
+    .dropdown-menu {
+        padding: 0;
+    }
+
+    .dropdown-item {
+        width: 0;
+        display: table-cell;
+        height: 50px;
+        line-height: 50px;
+        vertical-align: middle;
+        border-style: solid;
+        border-color: #F6a017;
+        border-width: 0 1px 1px 1px;
+    }
+
+    .navbar-nav > li.dropdown.show .dropdown-menu {
+        display: table;
+        border-width: 1px 0 0 0;
+        width: 100%;
+        text-align: center;
+        margin-top: -1px; /*Necessary to line up with the border of the header*/
+    }
+}
+
+@media (min-width: 1200px) {  }
+
+.navbar-brand{
+    padding: 7px 15px;
+    max-width: 70%;
+    display: block;
+}
+#navBarImg{
+    height: 36px;
+}
+
+.breadcrumb{
+    background-color: #E3DCD2;
+    margin: 0;
+}
+
+/** OPMAAK AFBEELDING IN PAGINA **/
+.content-img-container{
+    text-align: center;
+}
+
+.content-img{
+    width:100%;
+    max-width:500px;
+    margin-top: 40px;
+}
+
+/** OPMAAK sitemap pagina **/
+#sitemap ul {
+    list-style-type: none;
+    /*padding-left: 0px;*/
+}
+
+#sitemap a {
+    color: rgb(51, 51, 51);
+    text-decoration: none;
+}
+
+#sitemap a:hover {
+    color: #F6A017;
+}
+
+/** OPMAAK faq pagina **/
+
+/*  Define width of table*/
+#faq table {
+    width: 100%;
+}
+
+/*Align all text in table to top*/
+#faq table tr td {
+    vertical-align: top;
+}
+
+/* Make all Q's and A's bold and orange*/
+#faq table tr td:first-child {
+    width: 5%;
+    font-weight: bold;
+    color: #F6A017;
+}
+
+/* Make all Q's bold */
+#faq table tr:nth-child(odd) {
+    font-weight: bold;
+}
+
+/*Create space between every Q&A*/
+#faq table tr:nth-child(even) td {
+    padding-bottom: 20px;
+}
+
+
+footer {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #F6a017;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 171px;
+}
+
+.footerHeader {
+    color: #F6a017;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+footer a, footer li {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #F6A017;
+    text-decoration: none;
+}
+
+#footerColSocialMedia li {
+    display: inline-block;
+}
+
+#footerColSocialMedia img {
+    width: 75px;
+    margin-bottom: 5px;
+}
