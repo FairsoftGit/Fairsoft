@@ -6,7 +6,7 @@
  * Time: 11:55
  */
 
-namespace App\Controllers;
+namespace App\Controllers\Fairsoft;
 use App\Models\Product;
 use \Core\View;
 
@@ -38,7 +38,7 @@ class ProductController extends \Core\Controller
 
 		$id = $this->route_params["id"];
 		$product = Product::constructFromDatabase($id);
-		View::renderTemplate('Pages/product.html', ["product" => $product]);
+		View::renderTemplate('Fairsoft/Pages/product.html', ["product" => $product]);
 	}
 
 }

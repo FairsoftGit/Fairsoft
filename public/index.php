@@ -27,16 +27,16 @@ set_exception_handler('Core\Error::exceptionHandler');
 $router = new Core\Router();
 
 // Routes to static pages
-$router->add('', ['controller' => 'page', 'action' => 'aboutUs']);
-$router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks']);
-$router->add('tech-support', ['controller' => 'page', 'action' => 'techSupport']);
-$router->add('contact', ['controller' => 'page', 'action' => 'contact']);
+$router->add('', ['controller' => 'page', 'action' => 'aboutUs', 'namespace' => 'Fairsoft']);
+$router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks', 'namespace' => 'Fairsoft']);
+$router->add('tech-support', ['controller' => 'page', 'action' => 'techSupport', 'namespace' => 'Fairsoft']);
+$router->add('contact', ['controller' => 'page', 'action' => 'contact', 'namespace' => 'Fairsoft']);
 
 // Routes to productpages
-$router->add('fairVest/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
-$router->add('fairBox/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
-$router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
-$router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index']);
+$router->add('fairVest/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
+$router->add('fairBox/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
+$router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
+$router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 
 if(!session_id())
 {
