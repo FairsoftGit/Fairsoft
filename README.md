@@ -105,7 +105,7 @@ View::renderTemplate('Home/index.html', [
 ]);
 ```
 
-A sample Twig template is included in [App/Views/Home/index.html](App/Views/Home/index.html) that inherits from the base template in [App/Views/base.html](App/Views/base.html).
+A sample Twig template is included in [App/Views/Home/index.html](App/Views/Home/index.html) that inherits from the base template in [App/Views/base.html](App/Views/Fairsoft/base.html).
 
 ## Models
 
@@ -117,7 +117,7 @@ $db = static::getDB();
 
 ## Errors
 
-If the `SHOW_ERRORS` configuration setting is set to `true`, full error detail will be shown in the browser if an error or exception occurs. If it's set to `false`, a generic message will be shown using the [App/Views/404.html](App/Views/404.html) or [App/Views/500.html](App/Views/500.html) views, depending on the error.
+If the `SHOW_ERRORS` configuration setting is set to `true`, full error detail will be shown in the browser if an error or exception occurs. If it's set to `false`, a generic message will be shown using the [App/Views/404.html](App/Views/Fairsoft/404.html) or [App/Views/500.html](App/Views/Fairsoft/500.html) views, depending on the error.
 
 ## Web server configuration
 

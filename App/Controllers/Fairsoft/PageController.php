@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Fairsoft;
 
 use \Core\View;
 
@@ -12,21 +12,21 @@ class PageController extends \Core\Controller
 	// Put Methods here
 	public function aboutUsAction()
 	{
-		View::renderTemplate('Pages/home.html');
+		View::renderTemplate('Fairsoft/Pages/home.html');
 	}
 
 	public function howItWorksAction()
 	{
-		View::renderTemplate('Pages/howItWorks.html');
+		View::renderTemplate('Fairsoft/Pages/howItWorks.html');
 	}
 
 	public function techSupportAction()
 	{
-		View::renderTemplate('Pages/techSupport.html');
+		View::renderTemplate('Fairsoft/Pages/techSupport.html');
 	}
 
 	public function contactAction()
 	{
-		View::renderTemplate('Pages/contact.html');
+		View::renderTemplate('Fairsoft/Pages/contact.html');
 	}
 }
