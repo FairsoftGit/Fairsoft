@@ -5,7 +5,7 @@ namespace App\Controllers\General;
 use \Core\Session;
 use \Core\View;
 use \App\Models\Account;
-use \App\Config;
+use \Core\Post;
 
 class AccountController extends \Core\Controller
 {
@@ -16,9 +16,9 @@ class AccountController extends \Core\Controller
             exit();
         }
 
-        if (isset($_POST['Username']) && isset($_POST['Password'])) {
-            $username = $_POST['Username'];
-            $password = $_POST['Password'];
+        if (Post::get('Username') && Post::get('Password')) {
+            $username = Post::get('Username');
+            $password = Post::get('Password');
             $account = Account::login($username, $password);
             if (!is_null($account) && !empty($account->getUsername())) {
                 Session::set('account', $account);

@@ -5,6 +5,8 @@
  * Date: 17-5-2018
  * Time: 14:58
  */
+namespace Core;
+use Twig\Node\Expression\Filter\DefaultFilter;
 
 class Post
 {
@@ -38,7 +40,7 @@ class Post
      * @return type
      */
 
-    public static function get($key, $filter = null, $options = null, $default = null) {
+    public static function get($key, $filter = FILTER_DEFAULT, $options = null, $default = null) {
         $value = filter_input(INPUT_POST, $key, $filter, $options);
         if($value === FALSE) {
             return $default;
