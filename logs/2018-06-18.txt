@@ -1,0 +1,14 @@
+[18-Jun-2018 09:35:47 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Fairsoft\public\index.php(40): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Fairsoft\Core\Router.php' on line 130
+[18-Jun-2018 09:35:53 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'PDOStatement::fetch() expects parameter 2 to be integer, string given'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'PDOStatement::f...', 'C:\\xampp\\htdocs...', 49, Array)
+#1 C:\xampp\htdocs\Fairsoft\App\models\Account.php(49): PDOStatement->fetch(1048584, 'App\\Models\\Acco...', Array)
+#2 C:\xampp\htdocs\Fairsoft\App\Controllers\General\AccountController.php(21): App\Models\Account::login('admin', 'test')
+#3 [internal function]: App\Controllers\General\AccountController->loginAction()
+#4 C:\xampp\htdocs\Fairsoft\Core\Controller.php(57): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\Fairsoft\Core\Router.php(121): Core\Controller->__call('login', Array)
+#6 C:\xampp\htdocs\Fairsoft\public\index.php(40): Core\Router->dispatch('login')
+#7 {main}
+Thrown in 'C:\xampp\htdocs\Fairsoft\App\models\Account.php' on line 49

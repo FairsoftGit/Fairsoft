@@ -21,3 +21,21 @@ msgstr "How it works"
 
 msgid "Technische ondersteuning"
 msgstr "Tech Support"
+
+msgid "Fairboard login"
+msgstr "Fairboard login"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Gebruikersnaam"
+msgstr "Username"
+
+msgid "Wachtwoord"
+msgstr "Password"
+
+msgid "Registreren"
+msgstr "Registreren"
+
+msgid "Wachtwoord vergeten"
+msgstr "Forgot password?"

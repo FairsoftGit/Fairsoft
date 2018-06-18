@@ -13,8 +13,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: nl\n"
 
-msgid "Hallo"
-msgstr "Hallo bezoeker"
-
 msgid "Over ons"
 msgstr "Over ons"
+
+msgid "Hoe het werkt"
+msgstr "Hoe het werkt"
+
+msgid "Technische ondersteuning"
+msgstr "Technische ondersteuning"
+
+msgid "Fairboard login"
+msgstr "Fairboard login"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Gebruikersnaam"
+msgstr "Gebruikersnaam"
+
+msgid "Wachtwoord"
+msgstr "Wachtwoord"
+
+msgid "Registreren"
+msgstr "Registreren"
+
+msgid "Wachtwoord vergeten"
+msgstr "Wachtwoord vergeten?"

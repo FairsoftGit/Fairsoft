@@ -9,6 +9,11 @@ namespace App;
  */
 class Config
 {
+//    Host db.fairsoft.nl
+//    Database md416377db426094
+//    Wachtwoord #^27FtEIoEMH5Nne
+//    Gebruiker md416377db426094
+
     /**
      * Database host
      * @var string
@@ -37,5 +42,5 @@ class Config
      * Show or hide error messages on screen
      * @var boolean
      */
-    const SHOW_ERRORS = true;
+    const SHOW_ERRORS = false;
 }

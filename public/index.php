@@ -11,7 +11,6 @@
  */
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-session_start();
 
 /**
  * Error and Exception handling
@@ -31,11 +30,11 @@ $router->add('', ['controller' => 'Page', 'action' => 'aboutUs']);
 $router->add('how-it-works', ['controller' => 'Page', 'action' => 'howItWorks']);
 $router->add('tech-support', ['controller' => 'Page', 'action' => 'techSupport']);
 $router->add('contact', ['controller' => 'Page', 'action' => 'contact']);
+$router->add('login', ['controller' => 'Account', 'action' => 'login', 'namespace' => 'General']);
 
 if(!session_id())
 {
 	session_start();
 }
-
 
 $router->dispatch($_SERVER['QUERY_STRING']);
