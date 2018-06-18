@@ -43,12 +43,17 @@ class AccountController extends \Core\Controller
 
     public function setLanguageAction()
     {
+        $location = '/';
+        if(isset($_SERVER['HTTP_REFERER']))
+        {
+            $location = $_SERVER['HTTP_REFERER'];
+        }
         $code = $this->route_params["language"];
         $language = $this->getLanguageByCode($code);
         if(!is_null($language))
         {
-            Session::set('locale', $language->locale);
+            Session::set('locale', $language->getLocale());
         }
-        header("location: " . $_SERVER['HTTP_REFERER']);
+        header("location: " . $location);
     }
 }

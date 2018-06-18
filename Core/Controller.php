@@ -35,7 +35,7 @@ abstract class Controller
     protected function getLanguageByCode($code)
     {
         foreach ($this->available_languages as $language) {
-            if ($language->code === $code) {
+            if ($language->getCode() === $code) {
                 return $language;
             }
         }

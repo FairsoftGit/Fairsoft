@@ -4,14 +4,13 @@ use PDO;
 
 class Language extends \Core\Model
 {
-    private $id, $code, $locale, $description;
+    private $id, $code, $locale;
 
-    private function __construct($id, $code, $locale, $description)
+    private function __construct($id, $code, $locale)
     {
         $this->id = $id;
         $this->code = $code;
         $this->locale = $locale;
-        $this->description = $description;
     }
 
     public static function getAvailable()
@@ -19,7 +18,7 @@ class Language extends \Core\Model
         try {
             $db = static::getDB();
             $stmt = $db->prepare('SELECT * from `language`');
-            $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Models\Language', [null, null, null, null]);
+            $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Models\Language', [null, null, null]);
             $stmt->execute();
             return $stmt->fetchAll();
         } catch (PDOException $e) {
@@ -37,9 +36,5 @@ class Language extends \Core\Model
     public function getLocale()
     {
         return $this->locale;
-    }
-    public function getDescription()
-    {
-        return $this->description;
     }
 }
