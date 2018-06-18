@@ -1,0 +1,54 @@
+{% extends "Fairboard/base.html" %}
+{% block title %}Fairboard | add{% endblock %}
+{% block pageCss %}
+{% endblock %}
+{% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/products">Producten</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Toevoegen</li>
+    </ol>
+</nav>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Product toevoegen
+    </div>
+    <div class="card-body">
+        <form action="#" id="addProductForm">
+            <div class="form-group">
+                <label for="name">Naam</label>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp"
+                       placeholder="Naam van product" required>
+            </div>
+            <div class="form-group">
+                <label for="purchPrice">Inkoopprijs</label>
+                <input type="number" class="form-control" name="purchPrice" id="purchPrice" placeholder="Inkoopprijs"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="salesPrice">Verkoopprijs</label>
+                <input type="number" class="form-control" name="salesPrice" id="salesPrice" placeholder="Verkoopprijs"
+                       required>
+            </div>
+            <div class="form-group">
+                <label for="rentalPrice">Verhuurprijs</label>
+                <input type="number" class="form-control" name="rentalPrice" id="rentalPrice"
+                       placeholder="Verhuur prijs" required>
+            </div>
+            <div class="form-group">
+                <label for="discount">Korting</label>
+                <input type="number" class="form-control" name="discount" id="discount" placeholder="Korting">
+            </div>
+            <div class="form-group">
+                <label for="description">Beschrijving</label>
+                <textarea name="description" class="form-control" rows="5" required id="description"></textarea>
+            </div>
+            <div id="responseStatus"></div>
+            <button type="submit" class="btn btn-primary">Opslaan</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block pageScript %}
+{% endblock %}
