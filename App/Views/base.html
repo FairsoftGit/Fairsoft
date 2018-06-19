@@ -40,7 +40,7 @@
         </ul>
     </nav>
     <nav>
-        {% for language in available_languages %}
+        {% for language in app.session.available_languages %}
             <a href="/{{language.getCode()}}">{{language.getCode()|trans}}</a>
         {% endfor %}
     </nav>

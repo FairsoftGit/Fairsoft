@@ -6,7 +6,6 @@
  * Time: 14:58
  */
 namespace Core;
-use Twig\Node\Expression\Filter\DefaultFilter;
 
 class Post
 {

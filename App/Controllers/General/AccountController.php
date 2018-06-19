@@ -30,7 +30,7 @@ class AccountController extends \Core\Controller
             header('Content-Type: application/json');
             echo $encoded;
         } else {
-            view::renderTemplate('General/Account/login.html', ['available_languages' => $this->available_languages]);
+            view::renderTemplate('General/Account/login.html');
 
         }
     }

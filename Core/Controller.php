@@ -2,6 +2,7 @@
 
 namespace Core;
 
+use App\Config;
 use \App\Models\Language;
 
 /**
@@ -11,13 +12,11 @@ use \App\Models\Language;
  */
 abstract class Controller
 {
-
     /**
      * Parameters from the matched route
      * @var array
      */
     protected $route_params = [];
-    protected $available_languages = [];
 
     /**
      * Class constructor
@@ -29,18 +28,26 @@ abstract class Controller
     public function __construct($route_params)
     {
         $this->route_params = $route_params;
-        $this->available_languages = Language::getAvailable();
-		$code = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-		$languageObject = $this->getLanguageByCode($code);
-		if(!is_null($languageObject) && is_null(Session::get('locale')))
-		{
-			Session::set('locale', $languageObject->getLocale());
-		}
+        $this->setLanguageDefaults();
+    }
+
+    private function setLanguageDefaults()
+    {
+        if(is_null(Session::get('available_languages')))
+        {
+            Session::set('available_languages', Language::getAvailable());
+        }
+        if(is_null(Session::get('locale')))
+        {
+            $browserLanguage = $this->getLanguageByCode(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2));
+            Session::set('locale', ($browserLanguage) ? $browserLanguage->getLocale() : Config::DEFAULT_LOCALE);
+        }
     }
 
     protected function getLanguageByCode($code)
     {
-        foreach ($this->available_languages as $language) {
+        $available_languages = Session::get('available_languages');
+        foreach ($available_languages as $language) {
             if ($language->getCode() === $code) {
                 return $language;
             }
@@ -50,7 +57,6 @@ abstract class Controller
 
     protected function isAuthenticated()
     {
-
         if (is_null(Session::get('account'))) {
             return false;
         }

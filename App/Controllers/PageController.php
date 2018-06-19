@@ -8,21 +8,21 @@ class PageController extends \Core\Controller
 {
 	public function aboutUsAction()
 	{
-		View::renderTemplate('Pages/home.html', ['available_languages' => $this->available_languages]);
+		View::renderTemplate('Pages/home.html');
 	}
 
 	public function howItWorksAction()
 	{
-		View::renderTemplate('Pages/howItWorks.html', ['available_languages' => $this->available_languages]);
+		View::renderTemplate('Pages/howItWorks.html');
 	}
 
 	public function techSupportAction()
 	{
-		View::renderTemplate('Pages/techSupport.html', ['available_languages' => $this->available_languages]);
+		View::renderTemplate('Pages/techSupport.html');
 	}
 
 	public function contactAction()
 	{
-		View::renderTemplate('Pages/contact.html', ['available_languages' => $this->available_languages]);
+		View::renderTemplate('Pages/contact.html');
 	}
 }
