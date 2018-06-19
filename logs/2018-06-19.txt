@@ -1,0 +1,4 @@
+[19-Jun-2018 18:56:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\Fairsoft\public\index.php(57): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Fairsoft\Core\Router.php' on line 130

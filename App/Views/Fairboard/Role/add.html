@@ -1,0 +1,30 @@
+{% extends "baseFairboard.html" %}
+{% block title %}Fairboard{% endblock %}
+{% block pageCss %}
+{% endblock %}
+{% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/role/index">Rollen</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Toevoegen</li>
+    </ol>
+</nav>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Rol toevoegen</div>
+    <div class="card-body">
+        <form method="post" id="addRoleForm">
+            <div class="form-group">
+                <label for="Role">Rol</label>
+                <input type="text" class="form-control" name="Role" id="Role" aria-describedby="roleHelp" placeholder="Role" required>
+            </div>
+            <div id="responseStatus"></div>
+            <button type="submit" class="btn btn-primary">Opslaan</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block pageScript %}
+{% endblock %}

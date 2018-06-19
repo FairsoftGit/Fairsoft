@@ -105,7 +105,7 @@ View::renderTemplate('Home/index.html', [
 ]);
 ```
 
-A sample Twig template is included in [App/Views/Home/index.html](App/Views/Home/index.html) that inherits from the base template in [App/Views/base.html](App/Views/base.html).
+A sample Twig template is included in [App/Views/Home/index.html](App/Views/Home/index.html) that inherits from the base template in [App/Views/base.html](App/Views/Fairsoft/base.html).
 
 ## Models
 

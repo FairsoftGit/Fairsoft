@@ -1,0 +1,30 @@
+{% extends "baseFairboard.html" %}
+{% block title %}Fairboard{% endblock %}
+{% block pageCss %}
+{% endblock %}
+{% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/permission/index">Permissies</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Toevoegen</li>
+    </ol>
+</nav>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Permissie toevoegen</div>
+    <div class="card-body">
+        <form method="post" id="addPermissionForm">
+            <div class="form-group">
+                <label for="Permission">Permissie</label>
+                <input type="text" class="form-control" name="Permission" id="Permission" aria-describedby="permissionHelp" placeholder="Permissie" required>
+            </div>
+            <div id="responseStatus"></div>
+            <button type="submit" class="btn btn-primary">Opslaan</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block pageScript %}
+{% endblock %}
