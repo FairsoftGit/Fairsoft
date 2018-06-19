@@ -52,7 +52,16 @@ class Product extends \Core\Model
 		return $stmt->fetchObject('App\Models\Product');
 	}
 
-	public function getProductId()
+//    public static function add($id, $quantity)
+//    {
+//        $db = static::getDB();
+//        $stmt = $db->prepare('insert into product ');
+//        $stmt->bindParam(':id', $id);
+//        $stmt->execute();
+//        return $stmt->fetchObject('App\Models\Product');
+//    }
+
+	public function getId()
 	{
 		return $this->id;
 	}
