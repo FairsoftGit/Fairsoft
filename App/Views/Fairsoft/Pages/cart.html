@@ -4,4 +4,23 @@
 
 {% block body %}
 <h1>{% trans "Winkelwagen" %} </h1>
+
+<table>
+	<tr>
+		<th></th>
+		<th>{% trans "Productnaam" %}</th>
+		<th>{% trans "Prijs" %}</th>
+		<th>{% trans "Aantal" %}</th>
+		<th>{% trans "Totaal" %}</th>
+	</tr>
+
+	{% for item in items %}
+	<tr>{{ item.getImgUrl() }} </tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	{% endfor %}
+</table>
+<a href="{{ path(app.request.headers('referer') }}">Klik hier om terug te gaan</a>
 {% endblock %}
