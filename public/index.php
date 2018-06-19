@@ -29,6 +29,7 @@ $idPattern = '{id:\d+}';
 
 //General
 $router->add($languagePattern, ['controller' => 'account', 'action' => 'setLanguage', 'namespace' => 'General']);
+$router->add($languagePattern, ['controller' => 'shoppingController', 'action' => 'basket', 'namespace' => 'General']);
 // Routes to static pages
 $router->add('', ['controller' => 'page', 'action' => 'aboutUs']);
 $router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks']);
