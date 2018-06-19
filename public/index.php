@@ -29,7 +29,8 @@ $idPattern = '{id:\d+}';
 
 //General
 $router->add($languagePattern, ['controller' => 'account', 'action' => 'setLanguage', 'namespace' => 'General']);
-$router->add($languagePattern, ['controller' => 'shoppingController', 'action' => 'basket', 'namespace' => 'General']);
+$router->add('login', ['controller' => 'Account', 'action' => 'login', 'namespace' => 'General']);
+$router->add('basket', ['controller' => 'shop', 'action' => 'basket', 'namespace' => 'General']);
 // Routes to static pages
 $router->add('', ['controller' => 'page', 'action' => 'aboutUs', 'namespace' => 'Fairsoft']);
 $router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks', 'namespace' => 'Fairsoft']);
@@ -43,11 +44,11 @@ $router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'in
 $router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 
 // Add the routes
-$router->add('', ['controller' => 'Page', 'action' => 'aboutUs']);
-$router->add('how-it-works', ['controller' => 'Page', 'action' => 'howItWorks']);
-$router->add('tech-support', ['controller' => 'Page', 'action' => 'techSupport']);
-$router->add('contact', ['controller' => 'Page', 'action' => 'contact']);
-$router->add('login', ['controller' => 'Account', 'action' => 'login', 'namespace' => 'General']);
+//$router->add('', ['controller' => 'Page', 'action' => 'aboutUs']);
+//$router->add('how-it-works', ['controller' => 'Page', 'action' => 'howItWorks']);
+//$router->add('tech-support', ['controller' => 'Page', 'action' => 'techSupport']);
+//$router->add('contact', ['controller' => 'Page', 'action' => 'contact']);
+
 
 
 if(!session_id())

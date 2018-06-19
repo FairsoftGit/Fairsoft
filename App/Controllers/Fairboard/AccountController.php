@@ -15,7 +15,6 @@ class AccountController extends \Core\Controller
     public function loginAction()
     {
         if($this->isAuthenticated()){
-
             header('location: /');
             exit();
         }

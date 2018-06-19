@@ -5,7 +5,7 @@ namespace App\Controllers\General;
 use \Core\Session;
 use \Core\View;
 
-class ShoppingController extends \Core\Controller
+class ShopController extends \Core\Controller
 {
    public function basketAction()
    {
