@@ -45,7 +45,7 @@ $router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index'
 
 // Testing shoppingcart
 $router->add('product/add/{id:\d+}', ['controller' => 'product', 'action' => 'add', 'namespace' => 'Fairsoft']);
-
+$router->add('product/delete/{id:\d+}', ['controller' => 'product', 'action' => 'delete', 'namespace' => 'Fairsoft']);
 
 
 if(!session_id())

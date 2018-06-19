@@ -51,7 +51,38 @@ class ProductController extends \Core\Controller
                 array_push($cookie, array('id' => $product_id, 'quantity' => $quantity));
             }
             $cookie = json_encode($cookie);
-            setcookie($cookieName, $cookie, time() + (86400 * 2)); // 86400 = 1 day
+            setcookie($cookieName, $cookie, time() + (86400 * 2), '/'); // 86400 = 1 day
+        }
+        $this->returnToReferer();
+    }
+
+    public function deleteAction()
+    {
+        $product_id = $this->route_params["id"];
+
+        if (!is_null($product_id)) {
+            $cookieName = 'Fairsoft_shopping_cart';
+            $cookie = array();
+            if (isset($_COOKIE[$cookieName])) {
+                $oldCookie = $_COOKIE[$cookieName];
+                $products = json_decode($oldCookie);
+                foreach ($products as $product) {
+                    if ($product_id === $product->id) {
+                       continue;
+                    }
+                    array_push($cookie, array('id' => $product->id, 'quantity' => $product->quantity));
+                }
+                if(count($cookie) <= 0)
+                {
+                    //Delete the cookie if there are no values
+                    setcookie($cookieName, $oldCookie, 1, '/'); // 86400 = 1 day
+                }
+                else
+                {
+                    $cookie = json_encode($cookie);
+                    setcookie($cookieName, $cookie, time() + (86400 * 2), '/'); // 86400 = 1 day
+                }
+            }
         }
         $this->returnToReferer();
     }
