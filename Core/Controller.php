@@ -88,6 +88,16 @@ abstract class Controller
         }
     }
 
+    protected function returnToReferer()
+    {
+        $location = '/';
+        if(isset($_SERVER['HTTP_REFERER']))
+        {
+            $location = $_SERVER['HTTP_REFERER'];
+        }
+        header("location: " . $location);
+    }
+
     /**
      * Before filter - called before an action method.
      *

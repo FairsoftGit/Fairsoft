@@ -43,6 +43,9 @@ $router->add('fairBox/{id:\d+}', ['controller' => 'product', 'action' => 'index'
 $router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 $router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 
+// Testing shoppingcart
+$router->add('product/add/{id:\d+}', ['controller' => 'product', 'action' => 'add', 'namespace' => 'Fairsoft']);
+
 
 
 if(!session_id())

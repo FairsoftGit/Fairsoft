@@ -31,6 +31,9 @@
                     <li>
                         <a href="/login">{% trans "Login" %}</a>
                     </li>
+                    <li>
+                        <a href="/basket">Winkelwagen</a>
+                    </li>
                 </ul>
             </li>
             <li>
@@ -44,6 +47,7 @@
         <a href="/{{language.getCode()}}">{{language.getCode()|trans}}</a>
         {% endfor %}
     </nav>
+    <a href="/product/add/1">Voeg Fairvest toe aan winkelwagen</a>
     {% block body %}
     {% endblock %}
 </body>
