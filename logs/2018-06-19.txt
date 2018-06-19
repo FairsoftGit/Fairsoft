@@ -13,3 +13,30 @@ Stack trace:
 #2 [internal function]: Core\Error::exceptionHandler(Object(Exception))
 #3 {main}
   thrown in C:\xampp\htdocs\Fairsoft\Core\View.php on line 66
+[19-Jun-2018 19:15:23 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\PageController not found'
+Stack trace: #0 D:\xampp\htdocs\Fairsoft\public\index.php(58): Core\Router->dispatch('')
+#1 {main}
+Thrown in 'D:\xampp\htdocs\Fairsoft\Core\Router.php' on line 127
+[19-Jun-2018 19:15:23 Europe/Berlin] PHP Fatal error:  Uncaught Twig_Error_Loader: Unable to find template "base.html" (looked into: D:\xampp\htdocs\Fairsoft/App/Views) in "500.html" at line 1. in D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Loader\Filesystem.php:226
+Stack trace:
+#0 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Loader\Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('base.html')
+#1 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(270): Twig_Loader_Filesystem->getCacheKey('base.html')
+#2 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(350): Twig_Environment->getTemplateClass('base.html')
+#3 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Template.php(330): Twig_Environment->loadTemplate('base.html', NULL)
+#4 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(378) : eval()'d code(15): Twig_Template->loadTemplate('base.html', '500.html', 1)
+#5 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(397): __TwigTemplate_bf23cd16cbbb792941482b19a9696410fbda40c2e0dca in D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Loader\Filesystem.php on line 226
+[19-Jun-2018 19:22:21 Europe/Berlin] Uncaught exception: 'Twig_Error_Syntax' with message 'Multiple extends tags are forbidden.'
+Stack trace: #0 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Parser.php(168): Twig_TokenParser_Extends->parse(Object(Twig_Token))
+#1 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Parser.php(81): Twig_Parser->subparse(NULL, false)
+#2 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(533): Twig_Parser->parse(Object(Twig_TokenStream))
+#3 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(565): Twig_Environment->parse(Object(Twig_TokenStream))
+#4 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(368): Twig_Environment->compileSource(Object(Twig_Source))
+#5 D:\xampp\htdocs\Fairsoft\vendor\twig\twig\lib\Twig\Environment.php(289): Twig_Environment->loadTemplate('Fairsoft/Pages/...')
+#6 D:\xampp\htdocs\Fairsoft\Core\View.php(66): Twig_Environment->render('Fairsoft/Pages/...', Array)
+#7 D:\xampp\htdocs\Fairsoft\App\Controllers\Fairsoft\ProductController.php(41): Core\View::renderTemplate('Fairsoft/Pages/...', Array)
+#8 [internal function]: App\Controllers\Fairsoft\ProductController->indexAction()
+#9 D:\xampp\htdocs\Fairsoft\Core\Controller.php(83): call_user_func_array(Array, Array)
+#10 D:\xampp\htdocs\Fairsoft\Core\Router.php(121): Core\Controller->__call('index', Array)
+#11 D:\xampp\htdocs\Fairsoft\public\index.php(59): Core\Router->dispatch('FairVest/1')
+#12 {main}
+Thrown in 'D:\xampp\htdocs\Fairsoft\App\Views\Fairsoft\Pages\product.html' on line 4
