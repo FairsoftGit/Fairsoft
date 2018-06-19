@@ -43,12 +43,6 @@ $router->add('fairBox/{id:\d+}', ['controller' => 'product', 'action' => 'index'
 $router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 $router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 
-// Add the routes
-//$router->add('', ['controller' => 'Page', 'action' => 'aboutUs']);
-//$router->add('how-it-works', ['controller' => 'Page', 'action' => 'howItWorks']);
-//$router->add('tech-support', ['controller' => 'Page', 'action' => 'techSupport']);
-//$router->add('contact', ['controller' => 'Page', 'action' => 'contact']);
-
 
 
 if(!session_id())
