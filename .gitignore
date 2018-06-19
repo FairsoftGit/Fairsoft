@@ -21,3 +21,12 @@
 >>>>>>> login
 logs/2018-06-16.txt
 logs/2018-06-18.txt
+.idea/php-test-framework.xml
+.idea/php.xml
+<<<<<<< HEAD
+logs/2018-06-18.txt
+=======
+.idea/webServers.xml
+>>>>>>> 035b1fd650d62baa489dcb280ac7063cc5c1c1e2
+logs/2018-06-18.txt
+logs/2018-06-19.txt

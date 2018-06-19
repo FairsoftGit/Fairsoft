@@ -2,3 +2,14 @@
 Stack trace: #0 C:\xampp\htdocs\Fairsoft\public\index.php(57): Core\Router->dispatch('favicon.ico')
 #1 {main}
 Thrown in 'C:\xampp\htdocs\Fairsoft\Core\Router.php' on line 130
+[19-Jun-2018 19:09:10 Europe/Berlin] Uncaught exception: 'Exception' with message 'Controller class App\Controllers\PageController not found'
+Stack trace: #0 C:\xampp\htdocs\Fairsoft\public\index.php(58): Core\Router->dispatch('')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Fairsoft\Core\Router.php' on line 127
+[19-Jun-2018 19:09:10 Europe/Berlin] PHP Fatal error:  Uncaught ErrorException: Undefined variable: locale in C:\xampp\htdocs\Fairsoft\Core\View.php:66
+Stack trace:
+#0 C:\xampp\htdocs\Fairsoft\Core\View.php(66): Core\Error::errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 66, Array)
+#1 C:\xampp\htdocs\Fairsoft\Core\Error.php(63): Core\View::renderTemplate('500.html')
+#2 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#3 {main}
+  thrown in C:\xampp\htdocs\Fairsoft\Core\View.php on line 66

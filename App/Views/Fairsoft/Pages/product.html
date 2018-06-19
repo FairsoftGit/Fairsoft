@@ -1,4 +1,9 @@
+<<<<<<< HEAD:App/Views/Fairsoft/Pages/product.html
 {% extends "Fairsoft/base.html" %}
+=======
+{% extends "base.html" %}
+{% set language=app.session.locale %}
+>>>>>>> Languages:App/Views/Pages/product.html
 
 {% block title %}Home{% endblock %}
 
@@ -7,10 +12,18 @@
 <h2>Prijs : &euro; {{ product.getSalesPrice() }}</h2>
 <p>Product-id : {{ product.getProductId() }}</p>
 <hr>
-{% autoescape false %} {{ product.getProductDesc() }} {% endautoescape %}
-<hr>
-{% autoescape false %} <p>{{ product.getProductDesc_en() }} {% endautoescape %}
-<hr>
+
+{{app.session.locale}}
+
+{% if language == "nl_NL" %}
+{% autoescape false %}
+{{ product.getProductDesc() }}
+{% endautoescape %}
+{% elseif language == "en_US" %}
+{% autoescape false %}
+{{ product.getProductDesc_en() }}
+{% endautoescape %}
+{% endif %}<hr>
 <p><img src="{{product.getImgurl()}}" alt="plaatje" width="{{product.getImgSize()}}" /></p>
 
 

@@ -5,7 +5,7 @@ namespace App\Controllers\General;
 use \Core\Session;
 use \Core\View;
 use \App\Models\Account;
-use \App\Config;
+use \Core\Post;
 
 class AccountController extends \Core\Controller
 {
@@ -16,9 +16,9 @@ class AccountController extends \Core\Controller
             exit();
         }
 
-        if (isset($_POST['Username']) && isset($_POST['Password'])) {
-            $username = $_POST['Username'];
-            $password = $_POST['Password'];
+        if (Post::get('Username') && Post::get('Password')) {
+            $username = Post::get('Username');
+            $password = Post::get('Password');
             $account = Account::login($username, $password);
             if (!is_null($account) && !empty($account->getUsername())) {
                 Session::set('account', $account);
@@ -31,6 +31,7 @@ class AccountController extends \Core\Controller
             echo $encoded;
         } else {
             view::renderTemplate('General/Account/login.html');
+
         }
     }
 
@@ -42,13 +43,17 @@ class AccountController extends \Core\Controller
 
     public function setLanguageAction()
     {
-        $referer = $_SERVER['HTTP_REFERER'];
-        $lan = $this->route_params["language"];
-        if (!is_null($lan)) {
-            if (array_key_exists($lan, Config::AVAILABLE_LANGUAGES)) {
-                Session::set('lan', $lan);
-            }
+        $location = '/';
+        if(isset($_SERVER['HTTP_REFERER']))
+        {
+            $location = $_SERVER['HTTP_REFERER'];
         }
-        header("location: " . $referer);
+        $code = $this->route_params["language"];
+        $language = $this->getLanguageByCode($code);
+        if(!is_null($language))
+        {
+            Session::set('locale', $language->getLocale());
+        }
+        header("location: " . $location);
     }
 }

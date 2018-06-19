@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fairsoft\n"
 "POT-Creation-Date: 2018-06-14 17:54+0200\n"
-"PO-Revision-Date: 2018-06-16 17:26+0200\n"
+"PO-Revision-Date: 2018-06-18 21:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,10 +22,9 @@ msgstr "How it works"
 msgid "Technische ondersteuning"
 msgstr "Tech Support"
 
-<<<<<<< HEAD
 msgid "Beschrijving FairVest"
 msgstr "<p>This is the description of our newest product: FairVest!</p>"
-=======
+
 msgid "Fairboard login"
 msgstr "Fairboard login"
 
@@ -43,4 +42,9 @@ msgstr "Registreren"
 
 msgid "Wachtwoord vergeten"
 msgstr "Forgot password?"
->>>>>>> login
+
+msgid "nl"
+msgstr "Dutch"
+
+msgid "en"
+msgstr "English"

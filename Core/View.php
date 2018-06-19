@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+
 use App\Config;
 
 /**
@@ -49,24 +50,17 @@ class View
             $twig = new \Twig_Environment($loader);
             $twig->addExtension(new \Twig_Extensions_Extension_I18n());
 
-           if (!is_null(Session::get('lan'))) {
-               $lan = Session::get('lan');
-                if(array_key_exists($lan, Config::AVAILABLE_LANGUAGES))
-                {
-                    $locale = Config::AVAILABLE_LANGUAGES[$lan];
-                }
+            $locale = Session::get('locale');
+            $locale = ($locale) ? $locale : Config::DEFAULT_LOCALE;
 
-			}
-
-//            $lang = "nl_NL";
-//            $locale = sprintf("%s.utf-8", $lang);
-			$domain = "messages";
+            $domain = "messages";
             $lpath = realpath((dirname(__DIR__)) . DIRECTORY_SEPARATOR . "locale");
 
             putenv("LANGUAGE=" . $locale);
             setlocale(LC_ALL, $locale);
             bindtextdomain($domain, $lpath);
             textdomain($domain);
+            $args['app']['session'] = $_SESSION;
         }
 
         echo $twig->render($template, $args);

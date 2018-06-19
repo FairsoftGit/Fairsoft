@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Models\Language;
 
 /**
  * Application configuration
@@ -44,5 +45,9 @@ class Config
      */
     const SHOW_ERRORS = false;
 
-    const AVAILABLE_LANGUAGES =['nl' => 'nl_NL', 'en' => 'en_US'];
+    /**
+     * The default locale
+     * @var string
+     */
+    const DEFAULT_LOCALE = 'nl_NL';
 }

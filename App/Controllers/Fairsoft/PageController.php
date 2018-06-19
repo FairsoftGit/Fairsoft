@@ -6,10 +6,6 @@ use \Core\View;
 
 class PageController extends \Core\Controller
 {
-	// Put properties here
-
-
-	// Put Methods here
 	public function aboutUsAction()
 	{
 		View::renderTemplate('Fairsoft/Pages/home.html');
