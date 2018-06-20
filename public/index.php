@@ -30,29 +30,32 @@ $idPattern = '{id:\d+}';
 //General
 $router->add($languagePattern, ['controller' => 'account', 'action' => 'setLanguage', 'namespace' => 'General']);
 $router->add('login', ['controller' => 'Account', 'action' => 'login', 'namespace' => 'General']);
+$router->add('logout', ['controller' => 'Account', 'action' => 'logout', 'namespace' => 'General']);
+$router->add('basket', ['controller' => 'shop', 'action' => 'basket', 'namespace' => 'General']);
 
 // Routes to static pages
 $router->add('', ['controller' => 'page', 'action' => 'aboutUs', 'namespace' => 'Fairsoft']);
 $router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks', 'namespace' => 'Fairsoft']);
-$router->add('fairData', ['controller' => 'page', 'action' => 'fairData', 'namespace' => 'Fairsoft']);
-$router->add('fairRent', ['controller' => 'page', 'action' => 'fairRent', 'namespace' => 'Fairsoft']);
-$router->add('fairPayPlan', ['controller' => 'page', 'action' => 'fairPayPlan', 'namespace' => 'Fairsoft']);
 $router->add('tech-support', ['controller' => 'page', 'action' => 'techSupport', 'namespace' => 'Fairsoft']);
 $router->add('contact', ['controller' => 'page', 'action' => 'contact', 'namespace' => 'Fairsoft']);
 $router->add('cart', ['controller' => 'cart', 'action' => 'showCart', 'namespace' => 'Fairsoft']);
 
+//Routes on fairboard
+$router->add('fairboard', ['controller' => 'page', 'action' => 'home', 'namespace' => 'Fairboard']);
+$router->add('fairboard/products', ['controller' => 'page', 'action' => 'contact', 'namespace' => 'Fairsoft']);
 
 // Routes to productpages
-$router->add('fairVest/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
-$router->add('fairBox/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
-$router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
-$router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
+$router->add('fairVest', ['controller' => 'product', 'action' => 'fairVest', 'namespace' => 'Fairsoft']);
+$router->add('fairBox', ['controller' => 'product', 'action' => 'fairBox', 'namespace' => 'Fairsoft']);
+$router->add('fairGoggles', ['controller' => 'product', 'action' => 'fairGoggles', 'namespace' => 'Fairsoft']);
+$router->add('fairApp', ['controller' => 'product', 'action' => 'fairApp', 'namespace' => 'Fairsoft']);
 
 // Testing shoppingcart
 $router->add('cart/add/{id:\d+}', ['controller' => 'cart', 'action' => 'add', 'namespace' => 'Fairsoft']);
 $router->add('cart/edit/{id:\d+}', ['controller' => 'cart', 'action' => 'edit', 'namespace' => 'Fairsoft']);
 $router->add('cart/delete/{id:\d+}', ['controller' => 'cart', 'action' => 'delete', 'namespace' => 'Fairsoft']);
 
+$router->add('cookie', ['controller' => 'product', 'action' => 'readCookies', 'namespace' => 'Fairsoft']);
 
 
 
