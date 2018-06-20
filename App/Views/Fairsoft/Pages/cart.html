@@ -1,0 +1,34 @@
+{% extends "Fairsoft/base.html" %}
+
+{% block title %}Winkelwagen{% endblock %}
+
+{% block body %}
+<h1>{% trans "Winkelwagen" %} </h1>
+
+<table>
+	<tr>
+		<th></th>
+		<th>{% trans "Productnaam" %}</th>
+		<th>{% trans "Prijs" %}</th>
+		<th>{% trans "Aantal" %}</th>
+		<th>{% trans "Totaal" %}</th>
+		<th>Verwijder</th>
+	</tr>
+	{% for item in products %}
+		<tr>
+			<td><img src="{{item.imgUrl}}" alt="" width="16"></td>
+			<td>{{item.name}}</td>
+			<td>{{item.price}}</td>
+			<form action="/cart/edit/{{item.id}}" method="POST">
+				<td><input type="number" name="newQuantity" value="{{item.quantity}}"></td>
+				<td><input type="submit" value="Wijzig"></td>
+			</form>
+			<td>
+				<a href="/cart/delete/{{item.id}}">Verwijder</a>
+			</td>
+			<td>{{item.rowTotal}}</td>
+		</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
