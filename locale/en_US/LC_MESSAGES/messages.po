@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fairsoft\n"
 "POT-Creation-Date: 2018-06-14 17:54+0200\n"
-"PO-Revision-Date: 2018-06-18 21:12+0200\n"
+"PO-Revision-Date: 2018-06-20 21:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,38 +13,76 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: en_US\n"
 
+# Fairsoft - base
+msgid "nl"
+msgstr "Dutch"
+
+msgid "en"
+msgstr "English"
+
 msgid "Over ons"
 msgstr "About us"
 
 msgid "Hoe het werkt"
 msgstr "How it works"
 
+msgid "Onze producten"
+msgstr "Our products"
+
+msgid "Onze diensten"
+msgstr "Our services"
+
 msgid "Technische ondersteuning"
 msgstr "Tech Support"
 
-msgid "Beschrijving FairVest"
-msgstr "<p>This is the description of our newest product: FairVest!</p>"
-
-msgid "Fairboard login"
-msgstr "Fairboard login"
-
-msgid "Login"
+msgid "Inloggen"
 msgstr "Login"
 
-msgid "Gebruikersnaam"
-msgstr "Username"
+msgid "Taal"
+msgstr "Language"
 
-msgid "Wachtwoord"
-msgstr "Password"
+msgid "Klantenservice"
+msgstr "Customer Care"
 
-msgid "Registreren"
-msgstr "Registreren"
+msgid "Contact informatie"
+msgstr "Contact information"
 
-msgid "Wachtwoord vergeten"
-msgstr "Forgot password?"
+msgid "Veelgestelde vragen"
+msgstr "F.A.Q."
 
-msgid "nl"
-msgstr "Dutch"
+msgid "Algemene voorwaarden"
+msgstr "Terms / Conditions"
 
-msgid "en"
-msgstr "English"
+msgid "Bestellen en leveren"
+msgstr "Order and Delivery"
+
+msgid "Betaling"
+msgstr "Payment"
+
+msgid "Verhuur"
+msgstr "Rental"
+
+# Fairsoft homepage
+msgid "Wij zijn Fairsoft"
+msgstr "We are Fairsoft"
+
+msgid "Wij houden van airsoft"
+msgstr "We love airsoft"
+
+msgid "Niet van cheaten"
+msgstr "We don't love cheaters"
+
+msgid "Daarom willen wij jouw airsoft ervaring makkelijker en eerlijker maken. Dit doen we door je onze revolutionaire producten en diensten aan te bieden."
+msgstr "That's why we would like upgrade your air-soft experience. We'll achieve this by offering you our revolutionary products and services."
+
+msgid "Ons systeem is makkelijk in gebruik en snel op te zetten en we garanderen dat onze vesten en andere uitrusting duurzaam, betrouwbaar en boven alles in overeenstemming zijn met de hoogste veiligheidsstandaard van beschermingsuitrusting voor airsoft."
+msgstr "Our system is easy in use, quickly deployable and we guarantee that our products are manifactured in compliance with the highest standards for safety."
+
+msgid "Samen met het gebruikelijke zelf-meldsysteem kan ons product het spel voor de scheidsrechter en de spelers gemakkelijker maken door alle treffers in het spel te registreren. Op deze manier weten spelers en scheidsrechters altijd of een speler geraakt is en of de treffer fataal zou zijn geweest. Zo kan iedereen zich beter concentreren op het spel in plaats van zich zorgen te maken over wel of niet getroffen spelers."
+msgstr "Together with the usual hitregistration system, our product will make airsoft battles easier for players and referees by registering all hits and pass them on automatically. This way every participant can fully enjoy the battle, without worrying about cheating."
+
+msgid "Nieuwsgierig gemaakt?"
+msgstr "Did we make you curious?"
+
+msgid "Kijk bij onze producten voor meer informatie!"
+msgstr "Check our products for more info!"

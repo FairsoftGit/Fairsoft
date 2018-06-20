@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fairsoft\n"
 "POT-Creation-Date: 2018-06-14 17:53+0200\n"
-"PO-Revision-Date: 2018-06-18 21:12+0200\n"
+"PO-Revision-Date: 2018-06-20 21:32+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,38 +13,76 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: nl\n"
 
+# Fairsoft - base
+msgid "nl"
+msgstr "Nederlands"
+
+msgid "en"
+msgstr "Engels"
+
 msgid "Over ons"
 msgstr "Over ons"
 
 msgid "Hoe het werkt"
 msgstr "Hoe het werkt"
 
+msgid "Onze producten"
+msgstr "Onze producten"
+
+msgid "Onze diensten"
+msgstr "Onze diensten"
+
 msgid "Technische ondersteuning"
 msgstr "Technische ondersteuning"
 
-msgid "Beschrijving FairVest"
-msgstr "<p>Het FairVest bestaat uit een aantal onderdelen: een hoes van hoogwaardig textiel en de detectie platen.</p><p>De binnenzijde van de hoes is voorzien van een dubbele voering, waarin de flexibele detectieplaten in worden gestoken. De platen (rug- en borstplaat) worden met elkaar verbonden door een kabelverbinding.<br>Hiervoor wordt gebruik gemaakt van platte verbindingskabels die zijn verwerkt in de voering, zodat deze niet gaan irriteren.</p> <p>In het vest is ook een GPS antenne aangebracht, waardoor je GPS positie bekend is.</p> <p>Vanaf de borstplaat wordt een verbinding gemaakt met de Fair Box. Deze verzorgd de verzending van je GPS positie en eventuele hits naar de Fair Cloud.</p> <p>De hoezen zijn in verschillende maten en vormgevingen leverbaar.</p>"
+msgid "Inloggen"
+msgstr "Inloggen"
 
-msgid "Fairboard login"
-msgstr "Fairboard login"
+msgid "Taal"
+msgstr "Taal"
 
-msgid "Login"
-msgstr "Login"
+msgid "Klantenservice"
+msgstr "Klantenservice"
 
-msgid "Gebruikersnaam"
-msgstr "Gebruikersnaam"
+msgid "Contact informatie"
+msgstr "Contact informatie"
 
-msgid "Wachtwoord"
-msgstr "Wachtwoord"
+msgid "Veelgestelde vragen"
+msgstr "Veelgestelde vragen"
 
-msgid "Registreren"
-msgstr "Registreren"
+msgid "Algemene voorwaarden"
+msgstr "Algemene voorwaarden"
 
-msgid "Wachtwoord vergeten"
-msgstr "Wachtwoord vergeten?"
+msgid "Bestellen en leveren"
+msgstr "Bestellen en leveren"
 
-msgid "nl"
-msgstr "Nederlands"
+msgid "Betaling"
+msgstr "Betaling"
 
-msgid "en"
-msgstr "Engels"
+msgid "Verhuur"
+msgstr "Verhuur"
+
+# Fairsoft homepage
+msgid "Wij zijn Fairsoft"
+msgstr "Wij zijn Fairsoft"
+
+msgid "Wij houden van airsoft"
+msgstr "Wij houden van airsoft"
+
+msgid "Niet van cheaten"
+msgstr "Niet van cheaten"
+
+msgid "Daarom willen wij jouw airsoft ervaring makkelijker en eerlijker maken. Dit doen we door je onze revolutionaire producten en diensten aan te bieden."
+msgstr "Daarom willen wij jouw airsoft ervaring makkelijker en eerlijker maken. Dit doen we door je onze revolutionaire producten en diensten aan te bieden."
+
+msgid "Ons systeem is makkelijk in gebruik en snel op te zetten en we garanderen dat onze vesten en andere uitrusting duurzaam, betrouwbaar en boven alles in overeenstemming zijn met de hoogste veiligheidsstandaard van beschermingsuitrusting voor airsoft."
+msgstr "Ons systeem is makkelijk in gebruik en snel op te zetten en we garanderen dat onze vesten en andere uitrusting duurzaam, betrouwbaar en boven alles in overeenstemming zijn met de hoogste veiligheidsstandaard van beschermingsuitrusting voor airsoft."
+
+msgid "Samen met het gebruikelijke zelf-meldsysteem kan ons product het spel voor de scheidsrechter en de spelers gemakkelijker maken door alle treffers in het spel te registreren. Op deze manier weten spelers en scheidsrechters altijd of een speler geraakt is en of de treffer fataal zou zijn geweest. Zo kan iedereen zich beter concentreren op het spel in plaats van zich zorgen te maken over wel of niet getroffen spelers."
+msgstr "Samen met het gebruikelijke zelf-meldsysteem kan ons product het spel voor de scheidsrechter en de spelers gemakkelijker maken door alle treffers in het spel te registreren. Op deze manier weten spelers en scheidsrechters altijd of een speler geraakt is en of de treffer fataal zou zijn geweest. Zo kan iedereen zich beter concentreren op het spel in plaats van zich zorgen te maken over wel of niet getroffen spelers."
+
+msgid "Nieuwsgierig gemaakt?"
+msgstr "Nieuwsgierig gemaakt?"
+
+msgid "Kijk bij onze producten voor meer informatie!"
+msgstr "Kijk bij onze producten voor meer informatie!"
