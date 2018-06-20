@@ -47,6 +47,7 @@ $router->add('terms', ['controller' => 'page', 'action' => 'terms', 'namespace' 
 $router->add('sitemap', ['controller' => 'page', 'action' => 'sitemap', 'namespace' => 'Fairsoft']);
 $router->add('orderAndDelivery', ['controller' => 'page', 'action' => 'orderAndDelivery', 'namespace' => 'Fairsoft']);
 $router->add('payments', ['controller' => 'page', 'action' => 'payments', 'namespace' => 'Fairsoft']);
+$router->add('sendForm', ['controller' => 'page', 'action' => 'sendFormEmail', 'namespace' => 'Fairsoft']);
 
 //Routes on fairboard
 $router->add('fairboard', ['controller' => 'page', 'action' => 'home', 'namespace' => 'Fairboard']);
