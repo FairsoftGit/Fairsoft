@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $("#loginForm").submit(function (event) {
         event.preventDefault();
-        addProduct($(this));
+        login($(this));
     });
 
     $("#addProductForm").submit(function (event) {

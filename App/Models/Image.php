@@ -21,7 +21,7 @@ class Image extends \Core\Model
     public static function getImageByProduct($productId, $size, $extension)
     {
         $db = static::getDB();
-        $stmt = $db->prepare('SELECT image.id, image.name, image.size, image.extension, image.thumb_size FROM image INNER JOIN product_image WHERE image.size = :size AND image.extension = :extension AND product_image.productId = :productId AND product_image.imageId = image.id');
+        $stmt = $db->prepare('SELECT image.id, image.filename, image.size, image.extension, image.thumb_size FROM image INNER JOIN product_image WHERE image.size = :size AND image.extension = :extension AND product_image.product_id = :productId AND product_image.image_id = image.id');
         $stmt->bindParam(':productId', $productId);
         $stmt->bindParam(':size', $size);
         $stmt->bindParam(':extension', $extension);

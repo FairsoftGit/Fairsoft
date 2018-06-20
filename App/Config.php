@@ -50,4 +50,6 @@ class Config
      * @var string
      */
     const DEFAULT_LOCALE = 'nl_NL';
+
+    const IMAGE_FOLDER = 'img';
 }

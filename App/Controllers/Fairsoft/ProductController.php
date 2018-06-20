@@ -45,7 +45,7 @@ class ProductController extends \Core\Controller
     private function showProductPageById($id)
     {
         $product = Product::constructFromDatabase($id);
-        $image = $product->getImage();
+        $image = $product->getImage(849, 'png');
         if(is_null($product))
         {
             throw new \Exception('Product is null', 500);
