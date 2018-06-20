@@ -14,13 +14,13 @@
 		<th>{% trans "Totaal" %}</th>
 	</tr>
 
-	{% for item in items %}
-	<tr>{{ item.getImgUrl() }} </tr>
+	{% for product in products %}
+	<tr>{{ product.id }}</tr>
 	<tr></tr>
 	<tr></tr>
 	<tr></tr>
-	<tr></tr>
+	<tr>{{ product.quantity }}</tr>
 	{% endfor %}
 </table>
-<a href="{{ path(app.request.headers('referer') }}">Klik hier om terug te gaan</a>
+
 {% endblock %}

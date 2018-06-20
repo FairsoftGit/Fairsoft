@@ -31,11 +31,13 @@ $idPattern = '{id:\d+}';
 $router->add($languagePattern, ['controller' => 'account', 'action' => 'setLanguage', 'namespace' => 'General']);
 $router->add('login', ['controller' => 'Account', 'action' => 'login', 'namespace' => 'General']);
 $router->add('basket', ['controller' => 'shop', 'action' => 'basket', 'namespace' => 'General']);
+
 // Routes to static pages
 $router->add('', ['controller' => 'page', 'action' => 'aboutUs', 'namespace' => 'Fairsoft']);
 $router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks', 'namespace' => 'Fairsoft']);
 $router->add('tech-support', ['controller' => 'page', 'action' => 'techSupport', 'namespace' => 'Fairsoft']);
 $router->add('contact', ['controller' => 'page', 'action' => 'contact', 'namespace' => 'Fairsoft']);
+$router->add('cart', ['controller' => 'cart', 'action' => 'showCart', 'namespace' => 'Fairsoft']);
 
 // Routes to productpages
 $router->add('fairVest/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
