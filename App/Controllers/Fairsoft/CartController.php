@@ -35,14 +35,23 @@ class CartController extends \Core\Controller
 	 */
 	public function showCartAction()
 	{
-		$cookieName = 'Fairsoft_shopping_cart';
+		$cookieName = 'shopping_cart_FS';
 		if(isset($_COOKIE[$cookieName])) {
 				$products = json_decode($_COOKIE[$cookieName], TRUE);
+
+				//Get product details from database
+				for($i=0; $i<count($products); $i++) {
+					$id = $products[$i]['id'];
+					$product = Product::constructFromDatabase($id);
+					$products[$i]['name'] = $product->getProductName();
+					$products[$i]['price'] = $product->getSalesPrice();
+					$products[$i]['imgUrl'] = $product->getImgUrl();
+					$products[$i]['rowTotal'] = $products[$i]['price'] * $products[$i]['quantity'];
+				}
 		} else {
 			$products = "";
 		}
-		var_dump($products);
-		//View::renderTemplate('Fairsoft/Pages/cart.html', ["products" => $products]);
+		View::renderTemplate('Fairsoft/Pages/cart.html', ["products" => $products]);
 	}
 
 }

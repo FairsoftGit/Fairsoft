@@ -13,14 +13,15 @@
 		<th>{% trans "Aantal" %}</th>
 		<th>{% trans "Totaal" %}</th>
 	</tr>
-
-	{% for product in products %}
-	<tr>{{ product.id }}</tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr>{{ product.quantity }}</tr>
-	{% endfor %}
+	{% for item in products %}
+	<tr>
+		<td><img src="{{item.imgUrl}}" alt="" width="16"></td>
+		<td>{{item.name}}</td>
+		<td>{{item.price}}</td>
+		<td>{{item.quantity}}</td>
+		<td>{{item.rowTotal}}</td>
+	</tr>
+{% endfor %}
 </table>
 
 {% endblock %}

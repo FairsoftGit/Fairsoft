@@ -81,7 +81,7 @@ class Product extends \Core\Model
 		return $this->description_en;
 	}
 
-	public function getsalesPrice()
+	public function getSalesPrice()
 	{
 		return $this->salesPrice;
 	}

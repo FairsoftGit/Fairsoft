@@ -32,17 +32,15 @@ class ProductController extends \Core\Controller
     public function addAction()
     {
     	$posttime = time();
-		$cookieName = "test2";
+		$cookieName = "shopping_cart_FS";
 		$productId = $this->route_params["id"];
 		$quantity = Post::get('quantity');
 		$products = [];
 
-		if (!is_null($productId) && !is_null($quantity)) { 								// Wel html form data ontvangen
-			echo "Formulier data is ontvangen: Id: $productId / Aantal: $quantity <br><hr>";
+		if (!is_null($productId) && !is_null($quantity)) { 	// Wel html form data ontvangen
 
 			//Check if cookie exists
-			if(isset($_COOKIE[$cookieName])) {											// Cookie bestaat al
-				echo "Cookie $cookieName bestaat al. <br><hr>";
+			if(isset($_COOKIE[$cookieName])) {	// Cookie bestaat al
 
 				// Check if ProductId exists in cookie
 				$products = json_decode($_COOKIE[$cookieName], TRUE);
@@ -50,40 +48,40 @@ class ProductController extends \Core\Controller
 				$jsonKeys = array_column ($products, 'id');
 				// check if $product_id matches any id from cookie in $jsonKeys
 				$idExists = in_array($productId, $jsonKeys);
-				if($idExists == true) {													// ProductId staat al in de cookie
-					echo "ProductId $productId staat al in de cookie. <br><hr>";
 
+				if($idExists == true) {		// ProductId staat al in de cookie
 					for($i=0; $i<count($products); $i++) {
 						if($products[$i]['id'] == $productId) {
 							$products[$i]['quantity'] += $quantity;
 						}
 					}
-
-				} else {																// ProductId staat nog niet in de cookie
-					echo "ProductId $productId staat nog niet in de cookie. <br><hr>";
-
+				}
+				else {	// ProductId staat nog niet in de cookie
 					array_push($products, array("id" => $productId, "quantity" => $quantity));
 				}
 
-			} else {																	// Cookie bestaat nog niet
-				echo "Cookie $cookieName bestaat nog niet. <br><hr>";
+			}
+			else {	// Cookie bestaat nog niet
 				$products[0] = array("id" => $productId, "quantity" => $quantity);
 			}
 
 			$json = json_encode($products);
 			setcookie($cookieName, $json, $posttime + (86400 * 30), "/");
-			echo "<a href='/cookie'>Naar CookieViewer<a/>";
-			print_r($_COOKIE);
-		} else { 																		// Geen data uit html form ontvangen
+		}
+		else { 	// Geen data uit html form ontvangen
 			echo "Er is geen formulier data ontvangen!";
 		}
+		$this->returnToReferer();
     }
 
     public function readCookiesAction(){
     	echo "<a href='/'>Terug</a><hr><hr>";
-    	print_r($_COOKIE);
-
-}
+    	if(isset($_COOKIE['shopping_cart_FS'])) {
+			print_r($_COOKIE['shopping_cart_FS']);
+		} else {
+    		echo "No products in cookies stored yet!";
+		}
+	}
     /**
      * Show the index page
      *
