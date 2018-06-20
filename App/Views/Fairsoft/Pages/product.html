@@ -7,10 +7,21 @@
 {% block body %}
 <h1>Productnaam : {{product.getProductName()}} <img src="{{product.getImgurl()}}" alt="thumb" width="{{product.getThumbSize()}}" /></h1>
 <h2>Prijs : &euro; {{ product.getSalesPrice() }}</h2>
-<p>Product-id : {{ product.getProductId() }}</p>
+<p>Product-id : {{ product.id() }}</p>
 <hr>
 
-{{app.session.locale}}
+<h3>Voeg fairvest toe aan winkelwagen</h3>
+<form action="/product/add/{{product.getId()}}" method="post">
+    Aantal
+    <input type="number" name="quantity" value="1">
+    <input type="submit" value="Submit">
+</form>
+<br>
+
+<h3>Verwijder fairvest van winkelwagen</h3>
+<a href="/product/delete/1">Verwijder</a>
+<br>
+
 
 {% if language == "nl_NL" %}
 {% autoescape false %}
