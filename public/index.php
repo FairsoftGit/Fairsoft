@@ -36,9 +36,17 @@ $router->add('basket', ['controller' => 'shop', 'action' => 'basket', 'namespace
 // Routes to static pages
 $router->add('', ['controller' => 'page', 'action' => 'aboutUs', 'namespace' => 'Fairsoft']);
 $router->add('how-it-works', ['controller' => 'page', 'action' => 'howItWorks', 'namespace' => 'Fairsoft']);
+$router->add('fairData', ['controller' => 'page', 'action' => 'fairData', 'namespace' => 'Fairsoft']);
+$router->add('fairRent', ['controller' => 'page', 'action' => 'fairRent', 'namespace' => 'Fairsoft']);
+$router->add('fairPayPlan', ['controller' => 'page', 'action' => 'fairPayPlan', 'namespace' => 'Fairsoft']);
 $router->add('tech-support', ['controller' => 'page', 'action' => 'techSupport', 'namespace' => 'Fairsoft']);
 $router->add('contact', ['controller' => 'page', 'action' => 'contact', 'namespace' => 'Fairsoft']);
 $router->add('cart', ['controller' => 'cart', 'action' => 'showCart', 'namespace' => 'Fairsoft']);
+$router->add('faq', ['controller' => 'page', 'action' => 'faq', 'namespace' => 'Fairsoft']);
+$router->add('terms', ['controller' => 'page', 'action' => 'terms', 'namespace' => 'Fairsoft']);
+$router->add('sitemap', ['controller' => 'page', 'action' => 'sitemap', 'namespace' => 'Fairsoft']);
+$router->add('orderAndDelivery', ['controller' => 'page', 'action' => 'orderAndDelivery', 'namespace' => 'Fairsoft']);
+$router->add('payments', ['controller' => 'page', 'action' => 'payments', 'namespace' => 'Fairsoft']);
 
 //Routes on fairboard
 $router->add('fairboard', ['controller' => 'page', 'action' => 'home', 'namespace' => 'Fairboard']);

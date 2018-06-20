@@ -1,16 +1,36 @@
-{% extends "fairsoft/base.html" %}
-{% block title %}Fairsoft{% endblock %}
+{% extends "Fairsoft/base.html" %}
+{% block title %}{% trans "FairPayPlan" %}{% endblock %}
 {% block body %}
-<div id="fairPayPlan">
-    <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <div class="page-header">
-            <h1>FairPayPlan</h1>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">{% trans "FairPayPlan" %}</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-        <p>Wil je graag onze producten kopen, maar kun je het jezelf even niet veroorloven? Geen probleem! Je kunt bij ons ook in termijnen betalen.</p>
-        <p>Neem <a href="contact.php">contact</a> op voor meer informatie over onze betaalregelingen.</p>
-    </article>
-    <div class="content-img-container col-xs-12 col-sm-6 col-md-6 col-lg-6">
-        <img class="content-img" src="img/fairPayPlan-pic.png" alt="Het FairPayPlan">
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="page-header">
+                        <h1>{% trans "FairPayPlan" %}</h1>
+                    </div>
+                    <p>Wil je graag onze producten kopen, maar kun je het jezelf even niet veroorloven? Geen probleem! Je kunt bij ons ook in termijnen betalen.</p>
+                    <p>Neem <a href="/contact">contact</a> op voor meer informatie over onze betaalregelingen.</p>
+                </article>
+                <div class="content-img-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img class="content-img" src="img/fairPayPlan-pic.png" alt="FairPayPlan">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
 {% endblock %}

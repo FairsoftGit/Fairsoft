@@ -1,0 +1,37 @@
+{% extends "Fairsoft/base.html" %}
+{% block title %}{% trans "Bestellen en leveren" %}{% endblock %}
+{% block body %}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">{% trans "Bestellen en leveren" %}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="page-header">
+                        <h1>{% trans "Bestellen en leveren" %}</h1>
+                    </div>
+                    <p>Als we het door jou bestelde artikel of artikelen op voorraad hebben, zullen we deze vanzelfsprekend zo snel mogelijk aan je opsturen. Je bestelling wordt dan veilig en discreet afgeleverd door PostNL of DHL.</p>
+                    <p>Dus bestel je ma t/m vrijdag voor 16.00 uur een artikel dat in ons magazijn aanwezig is, dan pakken we het netjes voor je in en sturen het dezelfde dag nog naar je op.</p>
+                    <p>Het kan natuurlijk eens een keer voorkomen dat een artikel hier niet op voorraad is. In dat geval is de levertijd variabel en nemen we contact met je op om je hierover te informeren. Ook in dit geval doen we natuurlijk ons uiterste best om je bestelling zo snel mogelijk te leveren.</p>
+                </article>
+                <div class="content-img-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img class="content-img" src="img/orderAndDelivery-pic.png" alt="{% trans 'Betaalmogelijkheden' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

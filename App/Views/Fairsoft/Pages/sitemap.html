@@ -1,0 +1,64 @@
+{% extends "Fairsoft/base.html" %}
+{% block title %}{% trans "Sitemap" %}{% endblock %}
+{% block body %}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">{% trans "Sitemap" %}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="page-header">
+                        <h1>{% trans "Sitemap" %}</h1>
+                    </div>
+                    <div id="sitemap">
+                        <ul>
+                            <li><a href="/">Over ons</a></li>
+                            <li><a href="/how-it-works">Hoe het werkt</a></li>
+                            <li>Onze producten
+                                <ul>
+                                    <li><a href="/fairVest">FairVest</a></li>
+                                    <li><a href="/fairBox">FairBox</a></li>
+                                    <li><a href="/fairGoggles">FairGoggles</a></li>
+                                    <li><a href="/fairApp">FairApp</a></li>
+                                </ul>
+                            </li>
+                            <li>Onze diensten
+                                <ul>
+                                    <li><a href="/fairData">FairData</a></li>
+                                    <li><a href="/fairRent">FairRent</a></li>
+                                    <li><a href="/fairPayplan">FairPayPlan</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/tech-support">Technische ondersteuning</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/faq">Veelgestelde vragen</a></li>
+                            <li><a href="/sitemap">Sitemap</a></li>
+                            <li><a href="/terms">Algemene voorwaarden</a></li>
+                            <li>Klantenservice
+                                <ul>
+                                    <li><a href="/orderAndDelivery">Bestellen en leveren</a></li>
+                                    <li><a href="/payments">Betaling</a></li>
+                                    <li><a href="/fairRent">Verhuur</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

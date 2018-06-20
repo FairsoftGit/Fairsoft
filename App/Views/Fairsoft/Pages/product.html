@@ -19,65 +19,33 @@
 		</div>
 	</div>
 	<div class="card-body">
-		<div class="row content-row">
-			<article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<h1>Wij zijn Fairsoft</h1>
-				<h2>Wij houden van airsoft</h2>
-				<h3>Niet van cheaten</h3>
-				<p>
-					Daarom willen wij jouw airsoft ervaring makkelijker en eerlijker maken. Dit doen we door je onze
-					revolutionaire producten
-					en diensten aan te bieden.
-				</p>
-				<p>Ons systeem is makkelijk in gebruik en snel op te zetten en we garanderen dat onze vesten en andere
-					uitrusting duurzaam, betrouwbaar en boven alles in overeenstemming zijn met de hoogste
-					veiligheidsstandaard van beschermingsuitrusting voor airsoft.</p>
-				<p>Samen met het gebruikelijke zelf-meldsysteem kan ons product het spel voor de scheidsrechter en de
-					spelers gemakkelijker maken door alle treffers in het spel te registreren. Op deze manier weten
-					spelers en scheidsrechters altijd of een speler geraakt is en of de treffer fataal zou zijn geweest.
-					Zo kan iedereen zich beter concentreren op het spel in plaats van zich zorgen te maken over wel of
-					niet getroffen spelers.</p>
-				<p>Nieuwsgierig gemaakt?</p>
-				<p>Kijk bij onze producten voor meer informatie!</p>
-			</article>
-			<div class="content-img-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<img class="content-img" src="img/aboutUs-pic.png" alt="Home">
+		<div class="container-fluid">
+			<div class="row content-row">
+				<article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<h1>{%trans name %}</h1>
+					<div class="row">
+						{% if language == "nl_NL" %}
+							{% autoescape false %}
+								{{ product.getProductDesc() }}
+							{% endautoescape %}
+						{% elseif language == "en_US" %}
+							{% autoescape false %}
+								{{ product.getProductDesc_en() }}
+							{% endautoescape %}
+						{% endif %}
+					</div>
+					<h3>&euro; {{ product.getSalesPrice() }}</h3>
+					<form action="/cart/add/{{product.getId()}}" method="post">
+						{% trans "Aantal" %}
+						<input type="number" name="quantity" value="1">
+						<input type="submit" value="{% trans 'In winkelwagen' %}">
+					</form>
+				</article>
+				<div class="content-img-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+					<img class="content-img" src="{{product.getImgUrl()}}" alt="Home">
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-
-
-<h1>Productnaam : {{product.getProductName()}} <img src="{{product.getImgurl()}}" alt="thumb" width="{{product.getThumbSize()}}" /></h1>
-<h2>Prijs : &euro; {{ product.getSalesPrice() }}</h2>
-<p>Product-id : {{ product.id() }}</p>
-<hr>
-
-<h3>Voeg fairvest toe aan winkelwagen</h3>
-<form action="/cart/add/{{product.getId()}}" method="post">
-    Aantal
-    <input type="number" name="quantity" value="1">
-    <input type="submit" value="Submit">
-</form>
-<br>
-
-<h3>Verwijder fairvest van winkelwagen</h3>
-<a href="/cart/delete/1">Verwijder</a>
-<br>
-
-
-{% if language == "nl_NL" %}
-{% autoescape false %}
-{{ product.getProductDesc() }}
-{% endautoescape %}
-{% elseif language == "en_US" %}
-{% autoescape false %}
-{{ product.getProductDesc_en() }}
-{% endautoescape %}
-{% endif %}<hr>
-<p><img src="{{product.getImgurl()}}" alt="plaatje" width="{{product.getImgSize()}}" /></p>
-
-
 {% endblock %}
