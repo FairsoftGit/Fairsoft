@@ -46,11 +46,11 @@ $router->add('fairGoggles/{id:\d+}', ['controller' => 'product', 'action' => 'in
 $router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairsoft']);
 
 // Testing shoppingcart
-$router->add('product/add/{id:\d+}', ['controller' => 'product', 'action' => 'add', 'namespace' => 'Fairsoft']);
+$router->add('cart/add/{id:\d+}', ['controller' => 'cart', 'action' => 'add', 'namespace' => 'Fairsoft']);
+$router->add('cart/edit/{id:\d+}', ['controller' => 'cart', 'action' => 'edit', 'namespace' => 'Fairsoft']);
+$router->add('cart/delete/{id:\d+}', ['controller' => 'cart', 'action' => 'delete', 'namespace' => 'Fairsoft']);
 
 $router->add('cookie', ['controller' => 'product', 'action' => 'readCookies', 'namespace' => 'Fairsoft']);
-
-$router->add('product/delete/{id:\d+}', ['controller' => 'product', 'action' => 'delete', 'namespace' => 'Fairsoft']);
 
 
 
