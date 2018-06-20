@@ -67,7 +67,7 @@ class PageController extends \Core\Controller
 	}
 
 	public function sendFormEmailAction(){
-		if(isset($_POST['email'])) {
+		if(isset($_POST['e-mail'])) {
 			$email_to = "jhel@avans.nl";
 			$email_subject = "Contactformulier van www.fairsoft.nl";
 
