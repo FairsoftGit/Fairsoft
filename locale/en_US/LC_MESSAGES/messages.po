@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fairsoft\n"
 "POT-Creation-Date: 2018-06-14 17:54+0200\n"
-"PO-Revision-Date: 2018-06-20 21:31+0200\n"
+"PO-Revision-Date: 2018-06-20 22:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -62,6 +62,9 @@ msgstr "Payment"
 msgid "Verhuur"
 msgstr "Rental"
 
+msgid "bereikbaar"
+msgstr "reachable"
+
 # Fairsoft homepage
 msgid "Wij zijn Fairsoft"
 msgstr "We are Fairsoft"
@@ -86,3 +89,112 @@ msgstr "Did we make you curious?"
 
 msgid "Kijk bij onze producten voor meer informatie!"
 msgstr "Check our products for more info!"
+
+# Hoe het werkt
+msgid "Fairsoft levert hoge kwaliteit druk gevoelige tactische vesten die treffers registreren van BB’s (airsoft munitie)."
+msgstr "Fairsoft delivers high quality press sensitive tactical vests, which are able to detect and register hits."
+
+msgid "Dankzij de samenwerking tussen een revolutionair software algoritme en hoogwaardige technieken kan de uitrusting het verschil detecteren tussen BB’s en andere objecten. Het registreert ook waar op het lichaam een speler is geraakt en kan automatisch bepalen of een treffer fataal zou zijn geweest of niet. Daarnaast wordt de GPS positie van de speler ook continue bepaald."
+msgstr "Thanks to communication between our own developed software algoritm and high quality technical materials, our equipment is able to sense the difference between BB's and other objects. It also registers the location h=of indent, and will determine if that hit would have been fatal. Besides that, the player's GPS position will be registered too."
+
+msgid "Deze gegevens worden realtime via de FairBox verzonden. De FairBox is een klein apparaatje wat een speler bij zich draagt. Vanuit hier wordt de informatie naar onze server gestuurd waar alle informatie van de battle wordt opgeslagen."
+msgstr "This information will be send real-time through our FairBox. The FairBox is a small device which a player will carrie on him. The Fairbox will send the information to our server."
+
+msgid "Via de FairApp kan deze data live worden bekeken door de scheidsrechter. Deze is web-based en dus via browser of mobiele app te benaderen. De scheidsrechter kan zo met absolute zekerheid oordelen welke speler is geraakt en waar deze is geraakt."
+msgstr "Send through the FairBox, the information send, can be watched by the referee with the FairApp. This app is web-based."
+
+msgid "Als extra feature, leveren we optioneel de FairGoggles. Dit is een veiligheidsbril met ingebouwde HD-camera. Hiermee kun je je gameplay live streamen naar iedereen. Of je dit nu via Youtube, Facebook, Periscope of via onze eigen server wil doen, het kan allemaal!"
+msgstr "As a extra feature, we provide a optional gadget, the FairGoggles. These are safetyglasses with build-in HD-camera. With thes you can record or stream your game live."
+
+msgid "Om gebruik te maken van onze producten, is natuurlijk een data-verbinding nodig. We leveren hiervoor 2 soorten abonnementen. Je hebt een abonnement nodig om het vest te laten werken."
+msgstr "To be able to use our products, you'll need a data-connection. We provide in that too. We have 2 different kind of subscriptions."
+
+msgid "Ook is het mogelijk om onze gear te huren of gefaseerd af te betalen. Meer informatie hierover kun je vinden in het menu onder Onze diensten."
+msgstr "It is also possible to rent our products, or to pay for them in terms. You can find more information about this in the menu, Our services."
+
+msgid "Wil je onze producten eens komen bekijken of uitproberen, neem dan <a href=\"/contact\">contact</a> op voor een afspraak."
+msgstr "If you would like to come and see (or try) our products before you buy them, please <a href=\"/contact\">contact</a> us to make an appointment."
+
+# product
+msgid "Aantal"
+msgstr "Amount"
+
+msgid "In winkelwagen"
+msgstr "In cart"
+
+# fairData
+msgid "Om het FairVest en de FairGoggles te kunnen gebruiken, heb je een data-verbinding nodig.<br>De FairBox wordt geleverd met ingebouwde SIM-kaart. Je kunt de keuze maken uit twee verschillende abonnementen:"
+msgstr "To be able to use the FairVest and/or the FairGoggles, you'll need a data-connection.<br>The Fairbox comes with a build-in SIM-card. You can choose from the following subscription options:"
+
+msgid "Onbeperkt dataverbruik"
+msgstr "Unlimited data"
+
+msgid "Werkt alleen met het FairVest"
+msgstr "Werkt only with FairVest"
+
+msgid "Werkt met zowel het FairVest als FairGoggle"
+msgstr "Works with both FairVest and FairGoggles"
+
+msgid "1 maand opzegtermijn"
+msgstr "Cancellation period: 1 month"
+
+msgid "Let op! De FairGoggles zijn alleen te gebruiken als je een FairBigData abonnement hebt."
+msgstr "Attention! The FairGoggles are only useable when having a FairBigData subscription."
+
+# FairRent
+msgid "Onze producten zijn ook te huur! Ben je een organisator, en wil je graag een battle organiseren met gebruik van Fairsoft?<br>Neem contact met ons op om het gewenste aantal pakken te reserveren."
+msgstr "Our product are available to rent! Are you a battle organizer, and would you like to organize a battle with our products?<br>Please contact us to reserve the wanted amount of FairVests and/or FairGoggles."
+
+msgid "Prijzen"
+msgstr "Pricing"
+
+msgid "dag"
+msgstr "fay"
+
+msgid "dagen"
+msgstr "days"
+
+msgid "week"
+msgstr "weak"
+
+msgid "Vanaf"
+msgstr "From or more"
+
+msgid "Neem contact op"
+msgstr "Contact us"
+
+msgid "Bij gehuurde materialen wordt onbeperkt data verbruik geleverd. De gehuurde materialen worden op gewenste datum en tijdstip op locatie geleverd en opgehaald."
+msgstr "When you rent our products, we provide you with unlimited data-usage. The rental products will be delivered and picked-up at agreed date, time and location."
+
+# FairPayPlan
+msgid "Wil je graag onze producten kopen, maar kun je het jezelf even niet veroorloven? Geen probleem! Je kunt bij ons ook in termijnen betalen."
+msgstr "Would you like to buy our products, but you can't afford it right now? No problem! We can offer you various payment plans."
+
+msgid "Neem <a href=\"/contact\">contact</a> op voor meer informatie over onze betaalregelingen."
+msgstr "Please <a href=\"/contact\">contact</a> us for more information about our payment plans."
+
+# Technische ondersteuning
+msgid "Wij garanderen een robuust en betrouwbaar product. Toch leveren wij 3 jaar volledige herstelgarantie."
+msgstr "We guarantee a robust and reliable product. Nevertheless, we provide a full 3-year recovery guarantee"
+
+msgid "Mocht er een probleem zijn met je bij ons aangeschafte uitrusting, neem dan contact met ons op. Mocht het probleem niet direct opgelost kunnen worden, dan garanderen wij dezelfde dag een vervangend product."
+msgstr "When you can't provide a quick solution to your problem, we'll send you a replacement right away."
+
+# contactformulier
+msgid "Contactformulier"
+msgstr "Contactform"
+
+msgid "Naam"
+msgstr "Name"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "Telefoon"
+msgstr "Phone"
+
+msgid "Vraag / opmerking"
+msgstr "Question / Remarks"
+
+msgid "Verzenden"
+msgstr "Submit"
