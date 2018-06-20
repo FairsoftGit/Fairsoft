@@ -47,7 +47,7 @@ $router->add('fairApp/{id:\d+}', ['controller' => 'product', 'action' => 'index'
 
 // Testing shoppingcart
 $router->add('product/add/{id:\d+}', ['controller' => 'product', 'action' => 'add', 'namespace' => 'Fairsoft']);
-
+$router->add('cookie', ['controller' => 'product', 'action' => 'readCookies', 'namespace' => 'Fairsoft']);
 
 
 if(!session_id())

@@ -9,7 +9,7 @@
 namespace App\Controllers\Fairsoft;
 
 use App\Models\Product;
-use Core\Post;
+use \Core\Post;
 use \Core\View;
 
 /**
@@ -31,31 +31,59 @@ class ProductController extends \Core\Controller
 
     public function addAction()
     {
-        $product_id = $this->route_params["id"];
-        $quantity = Post::get('quantity');
+    	$posttime = time();
+		$cookieName = "test2";
+		$productId = $this->route_params["id"];
+		$quantity = Post::get('quantity');
+		$products = [];
 
-        if (!is_null($product_id) && !is_null($quantity)) {
-            $cookieName = 'Fairsoft_shopping_cart';
-            $cookie = array();
-            //Als de cookie al bestaat dan de quantity ophogen en alle items in een nieuwe array stoppen
-            if (isset($_COOKIE[$cookieName])) {
-                $products = json_decode($_COOKIE[$cookieName]);
+		if (!is_null($productId) && !is_null($quantity)) { 								// Wel html form data ontvangen
+			echo "Formulier data is ontvangen: Id: $productId / Aantal: $quantity <br><hr>";
 
-                foreach ($products as $product) {
-                    if ($product_id === $product->id) {
-                        $product->quantity = $product->quantity + $quantity;
-                    }
-                    array_push($cookie, array('id' => $product->id, 'quantity' => $product->quantity));
-                }
-            } else {
-                array_push($cookie, array('id' => $product_id, 'quantity' => $quantity));
-            }
-            $cookie = json_encode($cookie);
-            setcookie($cookieName, $cookie, time() + (86400 * 2)); // 86400 = 1 day
-        }
-        $this->returnToReferer();
+			//Check if cookie exists
+			if(isset($_COOKIE[$cookieName])) {											// Cookie bestaat al
+				echo "Cookie $cookieName bestaat al. <br><hr>";
+
+				// Check if ProductId exists in cookie
+				$products = json_decode($_COOKIE[$cookieName], TRUE);
+				// place all existing productId's in new array
+				$jsonKeys = array_column ($products, 'id');
+				// check if $product_id matches any id from cookie in $jsonKeys
+				$idExists = in_array($productId, $jsonKeys);
+				if($idExists == true) {													// ProductId staat al in de cookie
+					echo "ProductId $productId staat al in de cookie. <br><hr>";
+
+					for($i=0; $i<count($products); $i++) {
+						if($products[$i]['id'] == $productId) {
+							$products[$i]['quantity'] += $quantity;
+						}
+					}
+
+				} else {																// ProductId staat nog niet in de cookie
+					echo "ProductId $productId staat nog niet in de cookie. <br><hr>";
+
+					array_push($products, array("id" => $productId, "quantity" => $quantity));
+				}
+
+			} else {																	// Cookie bestaat nog niet
+				echo "Cookie $cookieName bestaat nog niet. <br><hr>";
+				$products[0] = array("id" => $productId, "quantity" => $quantity);
+			}
+
+			$json = json_encode($products);
+			setcookie($cookieName, $json, $posttime + (86400 * 30), "/");
+			echo "<a href='/cookie'>Naar CookieViewer<a/>";
+			print_r($_COOKIE);
+		} else { 																		// Geen data uit html form ontvangen
+			echo "Er is geen formulier data ontvangen!";
+		}
     }
 
+    public function readCookiesAction(){
+    	echo "<a href='/'>Terug</a><hr><hr>";
+    	print_r($_COOKIE);
+
+}
     /**
      * Show the index page
      *
