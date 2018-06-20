@@ -34,7 +34,7 @@ class PermissionController extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('PermissionController/index.html', ['permissions' => PermissionController::getAll(), 'account' => $_SESSION['account'] ]);
+        View::renderTemplate('PermissionController/home.html', ['permissions' => PermissionController::getAll(), 'account' => $_SESSION['account'] ]);
     }
 
     public function addAction()

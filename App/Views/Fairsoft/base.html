@@ -56,10 +56,10 @@
 						{% trans "Onze producten" %}
 					</a>
 					<div class="dropdown-menu" aria-labelledby="productDropdown">
-						<a class="dropdown-item" href="/fairVest/1">FairVest</a>
-						<a class="dropdown-item" href="/fairBox/2">FairBox</a>
-						<a class="dropdown-item" href="/fairGoggles/3">FairGoggles</a>
-						<a class="dropdown-item" href="/fairApp/4">FairApp</a>
+						<a class="dropdown-item" href="/fairVest">FairVest</a>
+						<a class="dropdown-item" href="/fairBox">FairBox</a>
+						<a class="dropdown-item" href="/fairGoggles">FairGoggles</a>
+						<a class="dropdown-item" href="/fairApp">FairApp</a>
 					</div>
 				</li>
 				<li class="nav-item dropdown">
@@ -87,7 +87,7 @@
 						</div>
 					</a>
 				</li>
-				{% if session.account is null %}
+				{% if app.session.account is null %}
 				<li class="nav-item">
 					<a class="nav-link" href="/login">{% trans "Inloggen" %}</a>
 				</li>
@@ -102,12 +102,12 @@
 						<a class="dropdown-item" href="#">{% trans "Mijn bestellingen" %}</a>
 						<a class="dropdown-item" href="#">{% trans "Instellingen" %}</a>
 						<a class="dropdown-item" href="/fairboard">{% trans "Fairboard" %}</a>
-						<a class="dropdown-item" href="/logout">{% trans "Uitloggen" %}</a>
+						<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">{% trans "Uitloggen" %}</a>
 					</div>
 				</li>
 				{% endif %}
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="accountDropdownLink" role="button"
+					<a class="nav-link dropdown-toggle" href="#" id="languageDropdownLink" role="button"
 					   data-toggle="dropdown"
 					   aria-haspopup="true" aria-expanded="false">
 						{% trans "Taal" %}
@@ -174,7 +174,25 @@
 	</div>
 </footer>
 <!-- End Footer -->
-
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+	 aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="logoutModalLabel">{% trans "Uitloggen" %}</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">{% trans "VraagUitloggen" %}</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">{% trans "Cancel" %}</button>
+				<a class="btn btn-fairsoft" href="/logout">{% trans "Uitloggen" %}</a>
+			</div>
+		</div>
+	</div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script

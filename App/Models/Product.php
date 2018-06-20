@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: SightVision
- * Date: 16-6-2018
- * Time: 11:50
- */
 
 namespace App\Models;
 
@@ -12,94 +6,164 @@ use PDO;
 
 class Product extends \Core\Model
 {
+    private $id;
+    private $name;
+    private $purchPrice;
+    private $salesPrice;
+    private $rentalPrice;
+    private $discount;
+    private $description;
+    private $description_en;
+    private $created;
+    private $modified;
+    public $stock;
+//	private $filename;
+//	private $extension;
+//	private $size;
+//	private $thumb_size;
 
-	// Properties
-	private $id;
-	private $name;
-	private $description;
-	private $description_en;
-	private $salesPrice;
-	private $filename;
-	private $extension;
-	private $size;
-	private $thumb_size;
+    public function __construct($id, $name, $purchPrice, $salesPrice, $rentalPrice, $discount, $description)
+    {
+        $this->id = $id;
+        $this->name = $name;
+        $this->purchPrice = $purchPrice;
+        $this->salesPrice = $salesPrice;
+        $this->rentalPrice = $rentalPrice;
+        $this->discount = $discount;
+        $this->description = $description;
+    }
 
-	// Methods
-	public static function constructFromDatabase($id)
-	{
-		$db = static::getDB();
-		$stmt = $db->prepare('
+    public static function constructFromDatabase($id)
+    {
+        $db = static::getDB();
+        $stmt = $db->prepare('
 			SELECT
 				`product`.id,
 				`product`.name,
+				`product`.purchPrice,
+				`product`.salesPrice,
+				`product`.rentalPrice,
+				`product`.discount,
 				`product`.description,
 				`product`.description_en,
-				`product`.salesPrice,
-				`image`.filename,
-				`image`.extension,
-				`image`.size,
-				`image`.thumb_size
+				`product`.created,
+				`product`.modified
 			FROM
 				`product`
-			  LEFT JOIN
-				`product_image` ON `product_image`.product_id = `product`.id
-			  LEFT JOIN
-				`image` ON `image`.id = `product_image`.image_id
 			WHERE
 				`product`.id = :id');
-		$stmt->bindParam(':id', $id);
-		$stmt->execute();
-		return $stmt->fetchObject('App\Models\Product');
-	}
+        $stmt->bindParam(':id', $id);
+        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Models\Product', [null, null, null, null, null, null, null]);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 
-//    public static function add($id, $quantity)
-//    {
-//        $db = static::getDB();
-//        $stmt = $db->prepare('insert into product ');
-//        $stmt->bindParam(':id', $id);
-//        $stmt->execute();
-//        return $stmt->fetchObject('App\Models\Product');
-//    }
+    public function insert()
+    {
+        try {
+            $db = static::getDB();
+            $stmt = $db->prepare('INSERT INTO product (name, purchPrice, salesPrice, rentalPrice, discount, description)
+                                  VALUES (:name, :purchPrice, :salesPrice, :rentalPrice, :discount, :description)');
+            $stmt->bindParam(':name', $this->name);
+            $stmt->bindParam(':purchPrice', $this->purchPrice);
+            $stmt->bindParam(':salesPrice', $this->salesPrice);
+            $stmt->bindParam(':rentalPrice', $this->rentalPrice);
+            $stmt->bindParam(':discount', $this->discount);
+            $stmt->bindParam(':description', $this->description);
+            $stmt->execute();
+        }
+        catch (PDOException $e)
+        {
+        }
+    }
+    public static function getAllWithStock()
+    {
+        $db = static::getDB();
+        $stmt = $db->query('
+			SELECT
+				`product`.id,
+				`product`.name,
+				`product`.purchPrice,
+				`product`.salesPrice,
+				`product`.rentalPrice,
+				`product`.discount,
+				`product`.description,
+				`product`.created,
+				`product`.modified,
+				COUNT(`item`.id) AS `stock`
+			FROM
+				`product`
+				LEFT JOIN `item` ON `product`.id = `item`.product_id
+				GROUP BY `product`.id');
+        $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Models\Product', [null, null, null, null, null, null, null]);
+        return $stmt->fetchAll();
+    }
 
-	public function getId()
-	{
-		return $this->id;
-	}
+    public function getStock()
+    {
+        if (!$this->stock) {
+            $db = static::getDB();
+            $stmt = $db->prepare('SELECT COUNT(`item`.id) AS stock FROM `item` WHERE `item`.product_id = :id ');
+            $stmt->bindParam(':id', $this->id);
+            $stmt->setFetchMode(PDO::FETCH_INTO, $this);
+            $stmt->execute();
+            $stmt->fetch();
+        }
+        return $this->stock;
+    }
 
-	public function getProductName()
-	{
-		return $this->name;
-	}
+    public function getImage($size, $extension)
+    {
+        return Image::getImageByProduct($this->id, $size, $extension);
+    }
 
-	public function getProductDesc()
-	{
-		return $this->description;
-	}
+    public function getId()
+    {
+        return $this->id;
+    }
 
-	public function getProductDesc_en()
-	{
-		return $this->description_en;
-	}
+    public function getName()
+    {
+        return $this->name;
+    }
 
-	public function getSalesPrice()
-	{
-		return $this->salesPrice;
-	}
+    public function getPurchPrice()
+    {
+        return $this->purchPrice;
+    }
 
-	public function getImgUrl()
-	{
-		$fileName = $this->filename;
-		$imgExt = $this->extension;
-		return "../img/" . $fileName . "." . $imgExt;
-	}
+    public function getSalesPrice()
+    {
+        return $this->salesPrice;
+    }
 
-	public function getImgSize()
-	{
-		return $this->size;
-	}
+    public function getRentalPrice()
+    {
+        return $this->rentalPrice;
+    }
 
-	public function getThumbSize()
-	{
-		return $this->thumb_size;
-	}
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function getDescription_en()
+    {
+        return $this->description_en;
+    }
+
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    public function getModified()
+    {
+        return $this->modified;
+    }
 }

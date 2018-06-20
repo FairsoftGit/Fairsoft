@@ -32,7 +32,7 @@
 {{ product.getProductDesc_en() }}
 {% endautoescape %}
 {% endif %}<hr>
-<p><img src="{{product.getImgurl()}}" alt="plaatje" width="{{product.getImgSize()}}" /></p>
+<p><img src="{{image.getRelativePath()}}" alt="plaatje" width="{{image.getSize()}}" /></p>
 
 
 {% endblock %}

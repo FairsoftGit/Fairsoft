@@ -18,15 +18,20 @@ class PageController extends \Core\Controller
      */
     protected function before()
     {
+        if(!$this->isAuthenticated())
+        {
+            View::renderTemplate('General/requireLogin.html');
+            return false;
+        }
     }
 
-    public function indexAction()
+    public function homeAction()
     {
-        View::renderTemplate('Fairboard/index.html');
+        View::renderTemplate('Fairboard/home.html');
     }
 
     public function fairboardAction()
     {
-        View::renderTemplate('Fairboard/index.html');
+        View::renderTemplate('Fairboard/home.html');
     }
 }

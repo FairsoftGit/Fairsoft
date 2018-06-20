@@ -23,9 +23,6 @@ use \Core\View;
  */
 class ProductController extends \Core\Controller
 {
-
-	const COOKIE_CART_NAME = 'shopping_cart_FS';
-
     /**
      * Before filter. Return false to stop the action from executing.
      *
@@ -34,8 +31,6 @@ class ProductController extends \Core\Controller
     protected function before()
     {
     }
-
-
     /**
      * Show the index page
      *
@@ -45,11 +40,12 @@ class ProductController extends \Core\Controller
     private function showProductPageById($id)
     {
         $product = Product::constructFromDatabase($id);
+        $image = $product->getImage();
         if(is_null($product))
         {
-            throw new \Exception('Er is helaas een fout opgetreden op de pagina', 500);
+            throw new \Exception('Product is null', 500);
         }
-        View::renderTemplate('Fairsoft/Pages/product.html', ["product" => $product]);
+        View::renderTemplate('Fairsoft/Pages/product.html', ["product" => $product, "image" => $image]);
     }
 
     public function fairVestAction()

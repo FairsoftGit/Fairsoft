@@ -9,13 +9,23 @@
 namespace App\Controllers\Fairboard;
 
 use App\Models\Product;
+use Core\Post;
 use Core\View;
 
 class ProductController extends \Core\Controller
 {
+    protected function before()
+    {
+        if (!$this->isAuthenticated()) {
+            View::renderTemplate('General/requireLogin.html');
+            return false;
+        }
+    }
+
     public function indexAction()
     {
-        View::renderTemplate('Fairboard/Product/index.html', ["products" => Product::getAll()]);
+        $products = Product::getAllWithStock();
+        View::renderTemplate('Fairboard/Product/index.html', ["products" => $products]);
     }
 
     public function deleteAction()
@@ -33,37 +43,32 @@ class ProductController extends \Core\Controller
 
     public function addAction()
     {
-        if (isset($_POST['name']) &&
-            isset($_POST['purchPrice']) &&
-            isset($_POST['salesPrice']) &&
-            isset($_POST['rentalPrice']) &&
-            isset($_POST['discount']) &&
-            isset($_POST['description']))
-        {
-            $name = $_POST['name'];
-            $purchPrice = $_POST['purchPrice'];
-            $salesPrice = $_POST['salesPrice'];
-            $rentalPrice = $_POST['rentalPrice'];
-            $discount = $_POST['discount'];
-            $description = $_POST['description'];
+        if (Post::get('name') &&
+            Post::get('purchPrice') &&
+            Post::get('salesPrice') &&
+            Post::get('rentalPrice') &&
+            Post::get('discount') &&
+            Post::get('description')) {
 
-            $product = new Product(null, $name, $purchPrice, $salesPrice, $rentalPrice, $discount, $description);
+            $product = new Product(
+                null,
+                Post::get('name'),
+                Post::get('purchPrice'),
+                Post::get('salesPrice'),
+                Post::get('rentalPrice'),
+                Post::get('discount'),
+                Post::get('description'));
+
             $product = $product->insert();
-            if($product->getId() === null)
-            {
-                $responseArray = array('result' => 'success', 'type' => 'Product');
+            if (is_null($product->getId())) {
+                $responseArray = array('result' => 'fail', 'message' => 'Er is iets mis gegaan tijdens het opslaan.');
+            } else {
+                $responseArray = array('result' => 'success', 'message' => '');
             }
-            else
-            {
-                $responseArray = array('result' => 'fail', 'type' => 'Product');
-            }
-
             $encoded = json_encode($responseArray);
             header('Content-Type: application/json');
             echo $encoded;
-        }
-        else
-        {
+        } else {
             View::renderTemplate('Fairboard/Product/add.html');
         }
     }

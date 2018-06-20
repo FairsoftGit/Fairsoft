@@ -39,11 +39,11 @@ class ItemController extends \Core\Controller
         if(isset($_GET['Product_id']))
         {
             $product_id = intval($_GET['Product_id']);
-            View::renderTemplate('item/index.html', ['items' => ItemController::getByProduct($product_id)]);
+            View::renderTemplate('item/home.html', ['items' => ItemController::getByProduct($product_id)]);
         }
         else
         {
-            View::renderTemplate('item/index.html', ['items' => ItemController::getAll() ]);
+            View::renderTemplate('item/home.html', ['items' => ItemController::getAll() ]);
         }
     }
 
