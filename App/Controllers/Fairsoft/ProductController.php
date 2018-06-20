@@ -31,15 +31,6 @@ class ProductController extends \Core\Controller
     {
     }
 
-
-    public function readCookiesAction(){
-    	echo "<a href='/'>Terug</a><hr><hr>";
-    	if(isset($_COOKIE[self::COOKIE_CART_NAME])) {
-			print_r($_COOKIE[self::COOKIE_CART_NAME]);
-		} else {
-    		echo "No products in cookies stored yet!";
-		}
-	}
     /**
      * Show the index page
      *
