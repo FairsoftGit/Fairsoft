@@ -29,6 +29,37 @@ class ProductController extends \Core\Controller
     {
     }
 
+    /**
+     * Show the index page
+     *
+     * @return void
+     */
+    private function showProductPageById($id)
+    {
+        $product = Product::constructFromDatabase($id);
+        View::renderTemplate('Fairsoft/Pages/product.html', ["product" => $product]);
+    }
+
+    public function fairVestAction()
+    {
+        $this->showProductPageById(1);
+    }
+
+    public function fairBoxAction()
+    {
+
+    }
+
+    public function fairGoggles()
+    {
+
+    }
+
+    public function fairApp()
+    {
+
+    }
+
     public function addAction()
     {
         $product_id = $this->route_params["id"];
@@ -68,17 +99,14 @@ class ProductController extends \Core\Controller
                 $products = json_decode($oldCookie);
                 foreach ($products as $product) {
                     if ($product_id === $product->id) {
-                       continue;
+                        continue;
                     }
                     array_push($cookie, array('id' => $product->id, 'quantity' => $product->quantity));
                 }
-                if(count($cookie) <= 0)
-                {
+                if (count($cookie) <= 0) {
                     //Delete the cookie if there are no values
                     setcookie($cookieName, $oldCookie, 1, '/'); // 86400 = 1 day
-                }
-                else
-                {
+                } else {
                     $cookie = json_encode($cookie);
                     setcookie($cookieName, $cookie, time() + (86400 * 2), '/'); // 86400 = 1 day
                 }
@@ -86,17 +114,4 @@ class ProductController extends \Core\Controller
         }
         $this->returnToReferer();
     }
-
-    /**
-     * Show the index page
-     *
-     * @return void
-     */
-    public function indexAction()
-    {
-        $id = $this->route_params["id"];
-        $product = Product::constructFromDatabase($id);
-        View::renderTemplate('Fairsoft/Pages/product.html', ["product" => $product]);
-    }
-
 }
