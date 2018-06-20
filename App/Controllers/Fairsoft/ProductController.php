@@ -9,6 +9,7 @@
 namespace App\Controllers\Fairsoft;
 
 use App\Models\Product;
+use Core\Error;
 use Core\Post;
 use \Core\View;
 
@@ -37,6 +38,10 @@ class ProductController extends \Core\Controller
     private function showProductPageById($id)
     {
         $product = Product::constructFromDatabase($id);
+        if(is_null($product))
+        {
+            throw new \Exception('Er is helaas een fout opgetreden op de pagina', 500);
+        }
         View::renderTemplate('Fairsoft/Pages/product.html', ["product" => $product]);
     }
 
@@ -47,17 +52,17 @@ class ProductController extends \Core\Controller
 
     public function fairBoxAction()
     {
-
+        $this->showProductPageById(2);
     }
 
     public function fairGoggles()
     {
-
+        $this->showProductPageById(3);
     }
 
     public function fairApp()
     {
-
+        $this->showProductPageById(4);
     }
 
     public function addAction()
