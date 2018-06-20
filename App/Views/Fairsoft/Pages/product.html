@@ -10,13 +10,18 @@
 <p>Product-id : {{ product.id() }}</p>
 <hr>
 
+<h3>Voeg fairvest toe aan winkelwagen</h3>
 <form action="/product/add/{{product.getId()}}" method="post">
     Aantal
     <input type="number" name="quantity" value="1">
     <input type="submit" value="Submit">
 </form>
+<br>
 
-{{app.session.locale}}
+<h3>Verwijder fairvest van winkelwagen</h3>
+<a href="/product/delete/1">Verwijder</a>
+<br>
+
 
 {% if language == "nl_NL" %}
 {% autoescape false %}
