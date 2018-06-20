@@ -5,47 +5,47 @@
 {% block body %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/products">Producten</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Toevoegen</li>
+        <li class="breadcrumb-item"><a href="/fairboard">{% trans "Home" %}</a></li>
+        <li class="breadcrumb-item"><a href="/fairboard/products">{% trans "Producten" %}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{% trans "Toevoegen" %}</li>
     </ol>
 </nav>
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fa fa-table"></i> Product toevoegen
+        <i class="fa fa-table"></i>&nbsp;{% trans "Product toevoegen" %}
     </div>
     <div class="card-body">
-        <form action="#" id="addProductForm">
+        <form action="/fairboard/product/add" method="post" id="addProductForm">
             <div class="form-group">
-                <label for="name">Naam</label>
+                <label for="name">{% trans "Naam" %}</label>
                 <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp"
-                       placeholder="Naam van product" required>
+                       placeholder="{{naam van product|trans}}" required>
             </div>
             <div class="form-group">
-                <label for="purchPrice">Inkoopprijs</label>
+                <label for="purchPrice">{% trans "Inkoopprijs" %}</label>
                 <input type="number" class="form-control" name="purchPrice" id="purchPrice" placeholder="Inkoopprijs"
                        required>
             </div>
             <div class="form-group">
-                <label for="salesPrice">Verkoopprijs</label>
+                <label for="salesPrice">{% trans "Verkoopprijs" %}</label>
                 <input type="number" class="form-control" name="salesPrice" id="salesPrice" placeholder="Verkoopprijs"
                        required>
             </div>
             <div class="form-group">
-                <label for="rentalPrice">Verhuurprijs</label>
+                <label for="rentalPrice">{% trans "Verhuurprijs" %}</label>
                 <input type="number" class="form-control" name="rentalPrice" id="rentalPrice"
                        placeholder="Verhuur prijs" required>
             </div>
             <div class="form-group">
-                <label for="discount">Korting</label>
+                <label for="discount">{% trans "Korting" %}</label>
                 <input type="number" class="form-control" name="discount" id="discount" placeholder="Korting">
             </div>
             <div class="form-group">
-                <label for="description">Beschrijving</label>
+                <label for="description">{% trans "Description" %}</label>
                 <textarea name="description" class="form-control" rows="5" required id="description"></textarea>
             </div>
             <div id="responseStatus"></div>
-            <button type="submit" class="btn btn-primary">Opslaan</button>
+            <button type="submit" class="btn btn-primary">{% trans "Opslaan" %}</button>
         </form>
     </div>
 </div>

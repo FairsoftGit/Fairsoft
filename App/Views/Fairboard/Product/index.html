@@ -6,33 +6,33 @@
 {% block body %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Producten</li>
+        <li class="breadcrumb-item"><a href="/">{% trans "Home" %}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{% trans "Producten" %}</li>
     </ol>
 </nav>
 
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fa fa-table"></i>&nbsp;Producten
+        <i class="fa fa-table"></i>&nbsp;{% trans "Producten" %}
     </div>
     <div class="card-body">
-        <a id="addButton" role="button" class="btn btn-success mb-4" href="/product/add">Toevoegen</a>
+        <a id="addButton" role="button" class="btn btn-success mb-4" href="/fairboard/product/add">{% trans "Toevoegen" %}</a>
         <!--<a id="editButton" role="button" class="btn btn-warning mb-4" href="/product/edit">Bewerken</a>-->
         <a id="deleteButton" role="button" class="btn btn-danger mb-4" data-name="{{product.name}}"
-           data-stock="{{product.stock}}" data-id="{{product.id}}" href="#">Verwijderen</a>
+           data-stock="{{product.stock}}" data-id="{{product.id}}" href="#">{% trans "Verwijderen" %}</a>
         <div class="table-responsive">
             <table id="dataTable" class="display" style="width:100%">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Naam</th>
-                    <th scope="col">Inkoop prijs</th>
-                    <th scope="col">Verkoop prijs</th>
-                    <th scope="col">Verhuur prijs</th>
-                    <th scope="col">Korting</th>
-                    <th scope="col">Voorraad</th>
-                    <th scope="col">Gewijzigd</th>
-                    <th scope="col">Aangemaakt</th>
+                    <th scope="col">{% trans "Naam" %}</th>
+                    <th scope="col">{% trans "Inkoopprijs" %}</th>
+                    <th scope="col">{% trans "Verkoopprijs" %}</th>
+                    <th scope="col">{% trans "Verhuurprijs" %}</th>
+                    <th scope="col">{% trans "Korting" %}</th>
+                    <th scope="col">{% trans "Voorraad" %}</th>
+                    <th scope="col">{% trans "Gewijzigd" %}</th>
+                    <th scope="col">{% trans "Aangemaakt" %}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -47,15 +47,6 @@
                     <td>{{ product.stock }}</td>
                     <td>{{ product.modified }}</td>
                     <td>{{ product.created }}</td>
-                    <!--<td>-->
-                    <!--<a href="/item/index?Product_id={{ product.id }}">-->
-                    <!--<span class="fa-stack" style="font-size:0.6em;">-->
-                    <!--<span class="far fa-square fa-stack-2x"></span>-->
-                    <!--<strong class="fa-stack-1x">{{ product.stock }}</strong>-->
-                    <!--</span>-->
-                    <!--</a>-->
-                    <!--</td>-->
-                    <!--<td><a href="/product/edit?Id={{ product.id }}"><i class="fas fa-edit"></i></a></td>-->
                 </tr>
                 {% endfor %}
                 </tbody>
@@ -69,15 +60,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Verwijderen</h5>
+                <h5 class="modal-title" id="deleteModalLabel">{% trans "Verwijderen" %}</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Weet je zeker dat je dit product wilt verwijderen?</div>
+            <div class="modal-body">{% trans "VerwijderProduct" %}</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuleren</button>
-                <a class="btn btn-danger" id="deleteButtonModal">Verwijderen</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">{% trans "Annuleren" %}</button>
+                <a class="btn btn-danger" id="deleteButtonModal">{% trans "Verwijderen" %}</a>
             </div>
         </div>
     </div>
@@ -104,16 +95,13 @@
             updateButtonStatus(table);
         });
 
-        $('#editButton').click(function () {
-
-        });
         $('#deleteButton').click(function () {
             if (table.row('.selected').any()) {
                 var selectedRow = table.row('.selected');
                 var index = selectedRow.index();
                 var id = selectedRow.id().replace('product_','');
-                var name = table.cell(index, 1).data();
-                var stock = table.cell(index, 6).data();
+                var name = table.cell(all, 1).data();
+                var stock = table.cell(all, 6).data();
                 deleteProduct('/product/delete', id, stock, name, table );
             }
         });

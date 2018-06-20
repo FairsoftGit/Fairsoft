@@ -34,7 +34,7 @@ class RoleController extends \Core\Controller
      */
     public function indexAction()
     {
-        View::renderTemplate('RoleController/index.html', ['roles' => RoleController::getAll(), 'account' => $_SESSION['account'] ]);
+        View::renderTemplate('RoleController/home.html', ['roles' => RoleController::getAll(), 'account' => $_SESSION['account'] ]);
     }
 
     public function addAction()

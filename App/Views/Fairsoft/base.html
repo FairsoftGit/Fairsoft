@@ -91,6 +91,10 @@
 					<li class="nav-item">
 						<a class="nav-link" href="/login">{% trans "Inloggen" %}</a>
 					</li>
+					{% if app.session.account is null %}
+					<li class="nav-item">
+						<a class="nav-link" href="/login">{% trans "Inloggen" %}</a>
+					</li>
 					{% else %}
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="accountDropdownLink" role="button"
@@ -102,7 +106,7 @@
 							<a class="dropdown-item" href="#">{% trans "Mijn bestellingen" %}</a>
 							<a class="dropdown-item" href="#">{% trans "Instellingen" %}</a>
 							<a class="dropdown-item" href="/fairboard">{% trans "Fairboard" %}</a>
-							<a class="dropdown-item" href="/logout">{% trans "Uitloggen" %}</a>
+							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">{% trans "Uitloggen" %}</a>
 						</div>
 					</li>
 					{% endif %}
@@ -189,5 +193,6 @@
 			crossorigin="anonymous"></script>
 	{% block pageScript %}
 	{% endblock %}
+
 </body>
 </html>
