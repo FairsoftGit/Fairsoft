@@ -26,11 +26,11 @@
 					<div class="row">
 						{% if language == "nl_NL" %}
 							{% autoescape false %}
-								{{ product.getProductDesc() }}
+								{{ product.getDescription() }}
 							{% endautoescape %}
 						{% elseif language == "en_US" %}
 							{% autoescape false %}
-								{{ product.getProductDesc_en() }}
+								{{ product.getDescription_en() }}
 							{% endautoescape %}
 						{% endif %}
 					</div>
