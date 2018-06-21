@@ -28,19 +28,6 @@ class ProductController extends \Core\Controller
         View::renderTemplate('Fairboard/Product/index.html', ["products" => $products]);
     }
 
-    public function deleteAction()
-    {
-        if (isset($_POST['id'])) {
-            $id = intval($_POST['id']);
-            Product::delete($id);
-
-            $responseArray = array('result' => 'succes');
-            $encoded = json_encode($responseArray);
-            header('Content-Type: application/json');
-            echo $encoded;
-        }
-    }
-
     public function addAction()
     {
         if (Post::get('name') &&
@@ -65,6 +52,25 @@ class ProductController extends \Core\Controller
             } else {
                 $responseArray = array('result' => 'success', 'message' => '');
             }
+            $encoded = json_encode($responseArray);
+            header('Content-Type: application/json');
+            echo $encoded;
+        } else {
+            View::renderTemplate('Fairboard/Product/add.html');
+        }
+    }
+
+    public function deleteAction()
+    {
+        $responseArray = array('result' => 'fail', 'message' => 'Er is iets mis gegaan tijdens het opslaan.');
+        if (Post::get('id')) {
+            $id = intval(Post::get('id'));
+            $product = Product::delete($id);
+            if(!$product)
+            {
+                $responseArray = array('result' => 'success');
+            }
+
             $encoded = json_encode($responseArray);
             header('Content-Type: application/json');
             echo $encoded;

@@ -1,6 +1,6 @@
 {% extends "Fairsoft/base.html" %}
 {% set language = app.session.locale %}
-{% set name = product.getProductName() %}
+{% set name = product.getName() %}
 
 {% block title %}{% trans name %}{% endblock %}
 

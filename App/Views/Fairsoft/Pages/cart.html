@@ -3,32 +3,49 @@
 {% block title %}Winkelwagen{% endblock %}
 
 {% block body %}
-<h1>{% trans "Winkelwagen" %} </h1>
 
-<table>
-	<tr>
-		<th></th>
-		<th>{% trans "Productnaam" %}</th>
-		<th>{% trans "Prijs" %}</th>
-		<th>{% trans "Aantal" %}</th>
-		<th>{% trans "Totaal" %}</th>
-		<th>Verwijder</th>
-	</tr>
-	{% for item in products %}
-		<tr>
-			<td><img src="{{item.imgUrl}}" alt="" width="16"></td>
-			<td>{{item.name}}</td>
-			<td>{{item.price}}</td>
-			<form action="/cart/edit/{{item.id}}" method="POST">
-				<td><input type="number" name="newQuantity" value="{{item.quantity}}"></td>
-				<td><input type="submit" value="Wijzig"></td>
-			</form>
-			<td>
-				<a href="/cart/delete/{{item.id}}">Verwijder</a>
-			</td>
-			<td>{{item.rowTotal}}</td>
-		</tr>
-{% endfor %}
-</table>
-
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">{% trans "Winkelwagen" %}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>{% trans "Productnaam" %}</th>
+                        <th>{% trans "Prijs" %}</th>
+                        <th>{% trans "Aantal" %}</th>
+                        <th>{% trans "Totaal" %}</th>
+                        <th>Verwijder</th>
+                    </tr>
+                    {% for product in products %}
+                    <tr>
+                        <td><img src="{{product.imgUrl}}" alt="" width="16"></td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <form action="/cart/edit/{{product.id}}" method="POST">
+                            <td><input type="number" name="newQuantity" value="{{product.quantity}}"></td>
+                            <td><input type="submit" value="Wijzig"></td>
+                        </form>
+                        <td>
+                            <a href="/cart/delete/{{product.id}}">Verwijder</a>
+                        </td>
+                        <td>{{item.rowTotal}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

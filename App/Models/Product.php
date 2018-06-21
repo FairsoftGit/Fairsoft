@@ -62,20 +62,35 @@ class Product extends \Core\Model
     {
         try {
             $db = static::getDB();
-            $stmt = $db->prepare('INSERT INTO product (name, purchPrice, salesPrice, rentalPrice, discount, description)
-                                  VALUES (:name, :purchPrice, :salesPrice, :rentalPrice, :discount, :description)');
+            $stmt = $db->prepare('CALL sp_add_product(:name, :purchPrice, :salesPrice, :rentalPrice, :discount, :description)');
             $stmt->bindParam(':name', $this->name);
             $stmt->bindParam(':purchPrice', $this->purchPrice);
             $stmt->bindParam(':salesPrice', $this->salesPrice);
             $stmt->bindParam(':rentalPrice', $this->rentalPrice);
             $stmt->bindParam(':discount', $this->discount);
             $stmt->bindParam(':description', $this->description);
+            $stmt->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'App\Models\Product', [null, null, null, null, null, null, null]);
             $stmt->execute();
+            return $stmt->fetch();
         }
         catch (PDOException $e)
         {
         }
     }
+
+    public static function delete($id)
+    {
+        try {
+            $db = static::getDB();
+            $stmt = $db->prepare('CALL sp_delete_product(:id)');
+            $stmt->bindParam(':id', $id);
+            $stmt->setFetchMode(PDO::FETCH_OBJ);
+            $stmt->execute();
+            return $stmt->fetch();
+        } catch (PDOException $e) {
+        }
+    }
+
     public static function getAllWithStock()
     {
         $db = static::getDB();

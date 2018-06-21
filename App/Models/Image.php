@@ -13,7 +13,7 @@ use PDO;
 class Image extends \Core\Model
 {
     private $id;
-    private $name;
+    private $filename;
     private $size;
     private $extension;
     private $thumb_size;
@@ -31,12 +31,12 @@ class Image extends \Core\Model
 
     public function getRelativePath()
     {
-        return DIRECTORY_SEPARATOR . Config::IMAGE_FOLDER . DIRECTORY_SEPARATOR . $this->name . $this->extension;
+        return DIRECTORY_SEPARATOR . Config::IMAGE_FOLDER . DIRECTORY_SEPARATOR . $this->filename . $this->extension;
     }
 
     private function getServerPath()
     {
-        return $_SERVER["DOCUMENT_ROOT"] . DIRECTORY_SEPARATOR . Config::IMAGE_FOLDER . DIRECTORY_SEPARATOR . $this->name . $this->extension;
+        return $_SERVER["DOCUMENT_ROOT"] . DIRECTORY_SEPARATOR . Config::IMAGE_FOLDER . DIRECTORY_SEPARATOR . $this->filename . $this->extension;
     }
 
     public function getResolution()
@@ -49,9 +49,9 @@ class Image extends \Core\Model
         return $this->id;
     }
 
-    public function getName()
+    public function getFilename()
     {
-        return $this->name;
+        return $this->filename;
     }
 
     public function getSize()

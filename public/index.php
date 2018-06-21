@@ -51,10 +51,6 @@ $router->add('sendForm', ['controller' => 'page', 'action' => 'sendFormEmail', '
 
 //Routes on fairboard
 $router->add('fairboard', ['controller' => 'page', 'action' => 'home', 'namespace' => 'Fairboard']);
-$router->add('fairboard/products', ['controller' => 'page', 'action' => 'contact', 'namespace' => 'Fairsoft']);
-
-//Routes on fairboard
-$router->add('fairboard', ['controller' => 'page', 'action' => 'home', 'namespace' => 'Fairboard']);
 $router->add('fairboard/products', ['controller' => 'product', 'action' => 'index', 'namespace' => 'Fairboard']);
 $router->add('fairboard/product/add', ['controller' => 'product', 'action' => 'add', 'namespace' => 'Fairboard']);
 $router->add('fairboard/product/delete', ['controller' => 'product', 'action' => 'delete', 'namespace' => 'Fairboard']);
@@ -65,7 +61,7 @@ $router->add('fairBox', ['controller' => 'product', 'action' => 'fairBox', 'name
 $router->add('fairGoggles', ['controller' => 'product', 'action' => 'fairGoggles', 'namespace' => 'Fairsoft']);
 $router->add('fairApp', ['controller' => 'product', 'action' => 'fairApp', 'namespace' => 'Fairsoft']);
 
-// Testing shoppingcart
+//Routes Shoppingcart
 $router->add('cart/add/{id:\d+}', ['controller' => 'cart', 'action' => 'add', 'namespace' => 'Fairsoft']);
 $router->add('cart/edit/{id:\d+}', ['controller' => 'cart', 'action' => 'edit', 'namespace' => 'Fairsoft']);
 $router->add('cart/delete/{id:\d+}', ['controller' => 'cart', 'action' => 'delete', 'namespace' => 'Fairsoft']);

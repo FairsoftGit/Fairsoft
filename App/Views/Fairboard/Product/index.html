@@ -18,8 +18,8 @@
     <div class="card-body">
         <a id="addButton" role="button" class="btn btn-success mb-4" href="/fairboard/product/add">{% trans "Toevoegen" %}</a>
         <!--<a id="editButton" role="button" class="btn btn-warning mb-4" href="/product/edit">Bewerken</a>-->
-        <a id="deleteButton" role="button" class="btn btn-danger mb-4" data-name="{{product.name}}"
-           data-stock="{{product.stock}}" data-id="{{product.id}}" href="#">{% trans "Verwijderen" %}</a>
+        <button id="deleteButton" role="button" class="btn btn-danger mb-4" data-name="{{product.name}}"
+                data-stock="{{product.stock}}" data-id="{{product.id}}" href="#">{% trans "Verwijderen" %}</button>
         <div class="table-responsive">
             <table id="dataTable" class="display" style="width:100%">
                 <thead>
@@ -55,24 +55,24 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">{% trans "Verwijderen" %}</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">{% trans "VerwijderProduct" %}</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">{% trans "Annuleren" %}</button>
-                <a class="btn btn-danger" id="deleteButtonModal">{% trans "Verwijderen" %}</a>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"-->
+     <!--aria-hidden="true">-->
+    <!--<div class="modal-dialog" role="document">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h5 class="modal-title" id="deleteModalLabel">{% trans "Verwijderen" %}</h5>-->
+                <!--<button class="close" type="button" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">×</span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--<div class="modal-body">{% trans "VerwijderProduct" %}</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<button class="btn btn-secondary" type="button" data-dismiss="modal">{% trans "Annuleren" %}</button>-->
+                <!--<button class="btn btn-danger" id="deleteButtonModal">{% trans "Verwijderen" %}</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 {% endblock %}
 {% block pageScript %}
 <!-- Custom scripts for this page-->
@@ -100,9 +100,9 @@
                 var selectedRow = table.row('.selected');
                 var index = selectedRow.index();
                 var id = selectedRow.id().replace('product_','');
-                var name = table.cell(all, 1).data();
-                var stock = table.cell(all, 6).data();
-                deleteProduct('/product/delete', id, stock, name, table );
+                var name = table.cell(index, 1).data();
+                var stock = table.cell(index, 6).data();
+                deleteProduct('/fairboard/product/delete', id, stock, name, table );
             }
         });
     });

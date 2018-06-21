@@ -143,10 +143,15 @@ class CartController extends \Core\Controller
 			//Get product details from database
 			for($i=0; $i<count($products); $i++) {
 				$id = $products[$i]['id'];
-				$product = Product::constructFromDatabase($id);
-				$products[$i]['name'] = $product->getProductName();
+                $product = Product::constructFromDatabase($id);
+                $image = $product->getImage(849, '.png');
+                if(is_null($product) || is_null($image))
+                {
+                    throw new \Exception('Product is null', 500);
+                }
+				$products[$i]['name'] = $product->getName();
 				$products[$i]['price'] = $product->getSalesPrice();
-				$products[$i]['imgUrl'] = $product->getImgUrl();
+				$products[$i]['imgUrl'] = $image->getRelativePath();
 				$products[$i]['rowTotal'] = $products[$i]['price'] * $products[$i]['quantity'];
 			}
 		} else {
