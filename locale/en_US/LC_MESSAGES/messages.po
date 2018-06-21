@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fairsoft\n"
 "POT-Creation-Date: 2018-06-14 17:54+0200\n"
-"PO-Revision-Date: 2018-06-20 22:37+0200\n"
+"PO-Revision-Date: 2018-06-21 14:02+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -198,3 +198,13 @@ msgstr "Question / Remarks"
 
 msgid "Verzenden"
 msgstr "Submit"
+
+# accountmenu
+msgid "Mijn bestellingen"
+msgstr "My orders"
+
+msgid "Instellingen"
+msgstr "Configuration"
+
+msgid "Uitloggen"
+msgstr "Log off"

@@ -19,12 +19,11 @@
             <div class="row content-row">
                 <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     {% autoescape false %}
-                    {{errorMsg}}
+                    {{Msg}}
                     {% endautoescape %}
                     <hr>
-                    <a href="/contact">{% trans "Terug naar contactformulier" %}</a>
-
-                    <a href="/">{% trans "Terug naar homepagina" %}</a>
+                    <p><a href="/contact">{% trans "Terug naar contactformulier" %}</a></p>
+                    <p><a href="/">{% trans "Terug naar homepagina" %}</a></p>
                 </article>
             </div>
         </div>

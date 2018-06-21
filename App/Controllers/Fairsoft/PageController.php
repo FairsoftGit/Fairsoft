@@ -74,8 +74,14 @@ class PageController extends \Core\Controller
 			function died($error) {
 				// your error code can go here
 				$errorMsg = "We are very sorry, but there were error(s) found with the form you submitted. These errors appear below.<br /><br /> $error.<br /><br />Please go back and fix these errors.<br /><br />";
-				View::renderTemplate('Fairsoft/Pages/formSubmit.html', ["errorMsg" => $errorMsg]);
+				View::renderTemplate('Fairsoft/Pages/formSubmit.html', ["Msg" => $errorMsg]);
 				die();
+			}
+
+			function success()
+			{
+				$successMsg = "Uw bericht is ontvangen. Wij zullen zo spoedig mogelijk met u contact opnemen.";
+				View::renderTemplate('Fairsoft/Pages/formSubmit.html', ["Msg" => $successMsg]);
 			}
 
 			// validation expected data exists
@@ -128,13 +134,11 @@ class PageController extends \Core\Controller
 			'Reply-To: '.$email_from."\r\n" .
 			'X-Mailer: PHP/' . phpversion();
 			@mail($email_to, $email_subject, $email_message, $headers);
-?>
-<!-- include your own success html here -->
-Thank you for contacting us. We will be in touch with you very soon.
-<?php
-			sleep(4);
-			$this->returnToReferer();
+
+			success();
+
+		} else {
+			died('Er is geen e-mailadres ingevuld.');
 		}
-		print '$_POST[email] was not set';
 	}
 }
