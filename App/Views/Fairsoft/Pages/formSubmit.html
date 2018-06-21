@@ -1,0 +1,35 @@
+{% extends "Fairsoft/base.html" %}
+{% block title %}{% trans "ContactFormulier" %}{% endblock %}
+{% block body %}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">{% trans "Contactformulier" %}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <div class="row content-row">
+                <article class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    {% autoescape false %}
+                    {{errorMsg}}
+                    {% endautoescape %}
+                    <hr>
+                    <a href="/contact">{% trans "Terug naar contactformulier" %}</a>
+
+                    <a href="/">{% trans "Terug naar homepagina" %}</a>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

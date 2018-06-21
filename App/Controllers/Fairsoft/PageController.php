@@ -67,29 +67,26 @@ class PageController extends \Core\Controller
 	}
 
 	public function sendFormEmailAction(){
-		if(isset($_POST['e-mail'])) {
+		if(isset($_POST['email'])) {
 			$email_to = "jhel@avans.nl";
 			$email_subject = "Contactformulier van www.fairsoft.nl";
 
 			function died($error) {
 				// your error code can go here
-				echo "We are very sorry, but there were error(s) found with the form you submitted. ";
-				echo "These errors appear below.<br /><br />";
-				echo $error."<br /><br />";
-				echo "Please go back and fix these errors.<br /><br />";
+				$errorMsg = "We are very sorry, but there were error(s) found with the form you submitted. These errors appear below.<br /><br /> $error.<br /><br />Please go back and fix these errors.<br /><br />";
+				View::renderTemplate('Fairsoft/Pages/formSubmit.html', ["errorMsg" => $errorMsg]);
 				die();
 			}
 
 			// validation expected data exists
 			if(!isset($_POST['name']) ||
-				!isset($_POST['e-mail']) ||
-				!isset($_POST['phone']) ||
+				!isset($_POST['email']) ||
 				!isset($_POST['text'])) {
 				died('We are sorry, but there appears to be a problem with the form you submitted.');
 			}
 
 			$name = $_POST['name']; // required
-			$email_from = $_POST['e-mail']; // required
+			$email_from = $_POST['email']; // required
 			$telephone = $_POST['phone']; // not required
 			$comments = $_POST['text']; // required
 
@@ -138,5 +135,6 @@ Thank you for contacting us. We will be in touch with you very soon.
 			sleep(4);
 			$this->returnToReferer();
 		}
+		print '$_POST[email] was not set';
 	}
 }
